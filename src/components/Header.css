@@ -1,0 +1,19 @@
+.Header{
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    max-width:950px;
+    width:100%;
+    height:auto;
+}
+
+.logo1{
+    margin:auto;
+    max-width:500px;
+    width:100%;
+    height:auto;
+}
+
+.FormControl{
+    width:100px;
+}

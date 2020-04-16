@@ -1,0 +1,20 @@
+.hrdiv{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin:auto;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    width:100%;
+    max-width:1000px;
+    height:auto;                                        
+}
+
+.title{
+    padding:25px;
+}
+
+hr{
+    background-color: gray;
+    width: 290px;
+}

@@ -1,0 +1,58 @@
+.footer{
+    background-color: black;
+    padding:50px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.info2{
+    color:white;
+    font-family: 'Roboto';
+    padding:10px;
+}
+
+.forms{
+    color:white;
+    font-family:'Roboto';
+    min-width: 300px;
+    padding:10px;
+    
+}
+
+.mail{
+    color:white;
+    font-family: 'Roboto';
+    padding:15px;
+
+}
+
+.icons{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:90px;
+}
+
+.icon{
+    max-width:100px;
+    height:auto;
+    padding:10px;
+}
+
+
+
+.productos{
+    margin:auto;
+}
+
+.carddeck{
+    height:auto;
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px
+}
+
+.comercios{
+    margin-top:110px;
+}
