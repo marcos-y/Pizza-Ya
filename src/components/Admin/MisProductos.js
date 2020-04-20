@@ -5,7 +5,15 @@ import ProdAdmin from './ProdAdmin';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
 import FormControl from 'react-bootstrap/FormControl';
+import img1 from '../pizza1.jpg';
+import img2 from '../empanada.png';
+import img3 from '../hamburguesa2.png';
+import img4 from '../postre.jpg';
+import img5 from '../cerveza.jpg';
 
+import icon from '../fork.png';
+import icon2 from '../iconCerveza.png';
+import icon3 from '../iconPostre.png';
 
 import {
     Link
@@ -22,23 +30,21 @@ const MisProductos = () => {
         <>
             <div className="MisProductos">
                 <h3>Mis Productos</h3>
-                <Button variant="outline-success" onClick={handleShow}>Agregar nuevo producto</Button>
+                    <Button variant="success" className="botonverde" onClick={handleShow}>Agregar nuevo producto</Button>
                 <div className="h">
                     <h3>Productos visibles</h3>
                 </div>
-               
-
             </div>
             
           
            
 
-            <ProdAdmin nombre="Super Pizza" clase="Pizzas"></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Pizzas"></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Empanadas"></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Hamburguesas"></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Bebidas"></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Postres"></ProdAdmin>
+            <ProdAdmin nombre="Super Pizza" clase="Pizzas" img={img1} icon={icon}></ProdAdmin>
+            <ProdAdmin nombre="Super Pizza" clase="Pizzas" img={img1}  icon={icon}></ProdAdmin>
+            <ProdAdmin nombre="Empanada" clase="Empanadas" img={img2}  icon={icon}></ProdAdmin>
+            <ProdAdmin nombre="Hamburguesa " clase="Hamburguesas" img={img3}  icon={icon}></ProdAdmin>
+            <ProdAdmin nombre="Cerveza" clase="Bebidas" img={img5}  icon={icon2}></ProdAdmin>
+            <ProdAdmin nombre="Postre " clase="Postres" img={img4} icon={icon3}></ProdAdmin>
 
 
 

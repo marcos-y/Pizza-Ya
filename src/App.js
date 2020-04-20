@@ -97,6 +97,7 @@ function App() {
           </Route>
 
           <Route path="/MiTienda">
+            <Admin></Admin>
             <Tienda></Tienda>
           </Route>
 

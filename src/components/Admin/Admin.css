@@ -1,27 +1,36 @@
-.Header{
+.Header1{
     margin:auto;
     display:flex;
-    flex-direction:column;
-    max-width:950px;
+    flex-direction:row;
+    max-width:920px;
     width:100%;
     height:auto;
+    position: relative;
+    
 }
 
-.logo1{
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+  }
+  
+
+.logoheader{
     margin:auto;
     max-width:500px;
     width:100%;
     height:auto;
 }
 
-.buton{
 
-    display:flex;
-    margin:auto !important;
-    border-color:black;
-    border-radius:10px;
-
+.buton1{
+    margin-top:10px;
+    float:right;
 }
+
 
 .menu{
     display:flex;
@@ -68,4 +77,5 @@
     justify-content: center;
     margin-top:30px;
 }
+
 

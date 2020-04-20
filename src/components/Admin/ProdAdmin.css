@@ -1,5 +1,5 @@
 .ProdAdmin{
-    max-width:1300px;
+    max-width:1250px;
     width:100%;
     height:auto;
     margin:auto;
@@ -12,7 +12,7 @@
 }
 
 .imglogo{
-    width:400px;
+    width:370px;
     display:flex;
     flex-wrap:nowrap;
 }
@@ -30,12 +30,12 @@
 }
 
 .boton1{
-    max-width:150px;
+    max-width:200px;
     height:auto;
     width:100%;
     padding:10px;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
 }
 
 .clase{
@@ -50,6 +50,10 @@ h6{
 .fork{
     height:auto;
     width:30px;
+}
+
+.botonAzul{
+    max-width:70px !important;
 }
 
 @media screen and (max-width: 600px) {

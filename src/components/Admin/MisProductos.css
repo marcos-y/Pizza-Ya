@@ -27,3 +27,9 @@
         margin-top:10px;
     }
   }
+
+  .botonverde{
+      width:100% !important;
+      max-width:920px !important;
+      height:auto;
+  }

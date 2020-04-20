@@ -11,6 +11,8 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
 import FormControl from 'react-bootstrap/FormControl';
 
+
+
 const ProdAdmin = (props) => {
 
     const [show, setShow] = useState(false);
@@ -26,7 +28,7 @@ const ProdAdmin = (props) => {
                     <img src={props.img} className="logo"></img>
                     <div className="descripcion">
                         <div className="clase">
-                            <img src={fork} className="fork"></img>
+                            <img src={props.icon} className="fork"></img>
                             <h6>{props.clase}</h6>
                         </div>
 
@@ -39,7 +41,7 @@ const ProdAdmin = (props) => {
 
                 <div className="boton1">
                     <Button variant="danger" size="sm">Ocultar</Button>
-                    <Button variant="info" size="sm" onClick={handleShow}>Editar</Button>
+                    <Button variant="info" size="sm" className="botonAzul"onClick={handleShow}>Editar</Button>
                 </div>
 
             </div>
