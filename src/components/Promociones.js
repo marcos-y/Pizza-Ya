@@ -28,6 +28,9 @@ const Promociones = () => {
                                 This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.
       </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                     <Card>
@@ -38,6 +41,9 @@ const Promociones = () => {
                                 This card has supporting text below as a natural lead-in to additional
         content.{' '}
                             </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                     <Card>
@@ -49,6 +55,9 @@ const Promociones = () => {
                                 additional content. This card has even longer content than the first to
                                 show that equal height action.
       </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                 </CardDeck>
@@ -62,6 +71,9 @@ const Promociones = () => {
                                 This is a wider card with supporting text below as a natural lead-in to
                                 additional content. This content is a little bit longer.
       </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                     <Card>
@@ -72,6 +84,9 @@ const Promociones = () => {
                                 This card has supporting text below as a natural lead-in to additional
         content.{' '}
                             </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                     <Card>
@@ -83,6 +98,9 @@ const Promociones = () => {
                                 additional content. This card has even longer content than the first to
                                 show that equal height action.
       </Card.Text>
+                            <div className="boton2">
+                                <Button variant="outline-info">Agregar al pedido</Button>
+                            </div>
                         </Card.Body>
                     </Card>
                 </CardDeck>

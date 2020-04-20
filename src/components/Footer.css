@@ -23,7 +23,7 @@
 .mail{
     color:white;
     font-family: 'Roboto';
-    padding:15px;
+    padding:10px;
 
 }
 
@@ -54,5 +54,9 @@
 }
 
 .comercios{
-    margin-top:110px;
+    margin-top:0px;
+}
+
+.mensaje{
+    margin-top:55px;
 }

@@ -17,3 +17,12 @@
 .FormControl{
     width:100px;
 }
+
+.boton3{
+    margin-left:8px !important;
+}
+
+.form1{
+    display:flex;
+    flex-wrap:nowrap;
+}

@@ -39,6 +39,7 @@ const Footer = () => {
 
 
                 <div className="forms">
+                    <h3>Dejanos un mensaje</h3>
                     <label htmlFor="basic-url">Nombre</label>
                     <InputGroup>
                         <FormControl id="basic-url" aria-describedby="basic-addon3" onChange={handleChangeNombre} />
@@ -49,27 +50,33 @@ const Footer = () => {
                         <FormControl id="basic-url" aria-describedby="basic-addon3" onChangeMensaje={handleChangeMensaje} />
                     </InputGroup>
 
+                    <div className="mensaje">
 
-                    <div  class="comercios">
+
+                        <label htmlFor="basic-url">Email</label>
+                        <InputGroup className="mb-3">
+                            <FormControl id="basic-url" aria-describedby="basic-addon3" onChangeEmail={handleChangeMail} />
+                        </InputGroup>
+
+                        <Button variant="light" >Enviar</Button>
+                    </div>
+
+
+                </div>
+
+
+                <div className="mail">
+
+                    <div class="comercios">
                         <h3>¿Queres adherir tu comercio?</h3>
                         <h5>Dejanos tu numero y nos contactaremos con vos</h5>
                         <InputGroup >
                             <FormControl id="basic-url" aria-describedby="basic-addon3" />
                         </InputGroup>
-
                     </div>
-                </div>
-
-
-                <div className="mail">
-                    <h3>Dejanos un mensaje</h3>
-
-                    <label htmlFor="basic-url">Email</label>
-                    <InputGroup className="mb-3">
-                        <FormControl id="basic-url" aria-describedby="basic-addon3" onChangeEmail={handleChangeMail} />
-                    </InputGroup>
-
+                    <br></br>
                     <Button variant="light" >Enviar</Button>
+
 
                     <div className="icons">
                         <img src={icon1} className="icon"></img>

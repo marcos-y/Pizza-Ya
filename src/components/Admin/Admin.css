@@ -1,0 +1,71 @@
+.Header{
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    max-width:950px;
+    width:100%;
+    height:auto;
+}
+
+.logo1{
+    margin:auto;
+    max-width:500px;
+    width:100%;
+    height:auto;
+}
+
+.buton{
+
+    display:flex;
+    margin:auto !important;
+    border-color:black;
+    border-radius:10px;
+
+}
+
+.menu{
+    display:flex;
+    max-width:950px;
+    height:auto;
+    flex-wrap:wrap;
+    margin:auto;
+    justify-content: space-around;
+}
+
+.submenu{
+    display:flex;
+    flex-wrap:wrap;
+    max-width:950px;
+    height:100%;
+    margin:auto;
+    justify-content: space-around;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.btn-info{
+    width:460px;
+}
+
+.btn-success{
+    width:460px;
+}
+
+.btn-warning{
+    width:300px;
+}
+
+.h3{
+    margin:auto;
+}
+
+.misproductos{
+    max-width:950px;
+    width:100%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-top:30px;
+}
+

@@ -1,0 +1,60 @@
+.ProdAdmin{
+    max-width:1300px;
+    width:100%;
+    height:auto;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    padding:0px;
+    justify-content: space-around;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.imglogo{
+    width:400px;
+    display:flex;
+    flex-wrap:nowrap;
+}
+
+.logo{
+    width:150px;
+    height:150px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.descripcion{
+    display:flex;
+    flex-direction:column;
+    margin-left:20px;
+}
+
+.boton1{
+    max-width:150px;
+    height:auto;
+    width:100%;
+    padding:10px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.clase{
+    display:flex;
+    width:30px;
+}
+
+h6{
+    color:green;
+}
+
+.fork{
+    height:auto;
+    width:30px;
+}
+
+@media screen and (max-width: 600px) {
+    .Pizzeria{
+        display:flex;
+        justify-content:space-between;
+    }
+  }

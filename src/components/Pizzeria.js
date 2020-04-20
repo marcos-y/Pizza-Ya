@@ -2,6 +2,9 @@ import React from 'react';
 import fork from './fork.png';
 import './Pizzeria.css';
 import Button from 'react-bootstrap/Button';
+import {
+    Link
+  } from "react-router-dom";
 
 
 const Pizzeria = (props) => {
@@ -26,7 +29,9 @@ const Pizzeria = (props) => {
                 </div>
 
                 <div className="boton1">
-                    <Button variant="outline-success">Ver productos</Button>
+                    <Link to="Productos">
+                        <Button variant="outline-success">Ver productos</Button>
+                    </Link>
                 </div>
 
             </div>
