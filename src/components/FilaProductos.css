@@ -3,13 +3,13 @@
 }
 
 .carddeck{
-    height:auto;
     width:100%;
     max-width:1000px;
     margin:auto;
     padding:0px;
     margin-top:20px;
     margin-bottom:30px;
+    
 }
 
 .card{

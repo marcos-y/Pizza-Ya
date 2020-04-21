@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Carousel1 from './components/Carousel1';
@@ -27,20 +27,90 @@ import Banners from './components/Admin/Banners';
 import Tienda from './components/Admin/Tienda';
 
 function App() {
+
+  {/* A JSX comment
+      ACA DEBERIAN LLEGAR LAS PROPS Y FCIONES, HASTA PRODUCTO.JS:
+      PIZZERIA=> PRODUCTOS y PROMOCIONES=> FILAPRODUCTOS => PRODUCTO
+     <ProductList products={products} handleAddToCart={handleAddToCart} />
+      <Cart cart={cart} handleQuantity={handleQuantity} />
+      CART Y HANDLE QUANT => PROMOS =>FILA PROD =>PROD =>PROD EN MODAL
+  };
+  */}
+
+  const products = [
+    {
+      id: 1,
+      product: "Pizza1",
+      stock: 12
+    },
+    {
+      id: 2,
+      product: "Pizza2",
+      stock: 30
+    },
+    {
+      id: 3,
+      product: "Pizza3",
+      stock: 25
+    }
+  ];
+
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = product => {
+    let newCart;
+    if (cart.find(prod => prod.id === product.id)) {
+      const updatedProduct = cart.filter(prod => prod.id === product.id);
+      if (updatedProduct[0].stock > updatedProduct[0].quantity) {
+        const ArrayWithoutProduct = cart.filter(prod => prod.id !== product.id);
+        updatedProduct[0].quantity += 1;
+        newCart = [...ArrayWithoutProduct, updatedProduct[0]];
+        setCart(newCart);
+      }
+    } else {
+      let productToAdd = product;
+      productToAdd.quantity = 1;
+      newCart = [...cart, productToAdd];
+      setCart(newCart);
+    }
+  };
+
+  const handleQuantity = (product, type) => {
+    const updatedProduct = cart.filter(prod => prod.id === product.id);
+    const ArrayWithoutProduct = cart.filter(prod => prod.id !== product.id);
+
+    switch (type) {
+      case "add":
+        if (updatedProduct[0].stock > updatedProduct[0].quantity) {
+          updatedProduct[0].quantity += 1;
+        }
+
+        break;
+      case "remove":
+        if (updatedProduct[0].quantity >= 1) {
+          updatedProduct[0].quantity -= 1;
+        }
+        break;
+      default:
+        break;
+    }
+    const newCart = [...ArrayWithoutProduct, updatedProduct[0]];
+    setCart(newCart);
+  }
+    
+
   return (
     <>
       <Router>
-
-
         <Switch>
 
           <Route exact path="/">
 
             <Header></Header>
             <Carousel1></Carousel1>
-            <Promociones></Promociones>
+            <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Promociones>
             <Title nombre="Pizzerias"></Title>
-            <Pizzeria nombre="Pizza Hut" img={img1}></Pizzeria>
+            <Pizzeria nombre="Pizza Hut" img={img1} ></Pizzeria>
             <br></br>
             <br></br>
             <Pizzeria nombre="La Continental" img={img2}></Pizzeria>
@@ -108,5 +178,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;

@@ -5,7 +5,7 @@ const Productos= () =>{
 
     return(
         <>
-            <FilaProductos></FilaProductos>
+            <FilaProductos nombre="Productos"></FilaProductos>
         </>
     )
 }

@@ -23,7 +23,9 @@ const Admin = () => {
 
                 <div className="topright">
                     <img src={admin} width="50px" height="50px"></img>
+                    <Link to="/">
                     <Button variant="primary">Cerrar sesion</Button>
+                    </Link>
                 </div>
 
             </div>
