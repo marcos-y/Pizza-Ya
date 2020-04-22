@@ -39,7 +39,7 @@ const Producto = (props) => {
                     
                     {/*---------------------------CART----------------------------*/}
                     <ProductoEnModal nombre={props.nombre} onAddQuant={props.onAddQuant} cart={props.cart} ></ProductoEnModal>
-                     
+                    <h6>Total:$ </h6>
                 </Modal.Body>
 
                 <Modal.Footer>

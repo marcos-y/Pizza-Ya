@@ -52,6 +52,21 @@ function App() {
       id: 3,
       product: "Pizza3",
       stock: 25
+    },
+    {
+      id: 4,
+      product: "Pizza4",
+      stock: 25
+    },
+    {
+      id: 5,
+      product: "Pizza5",
+      stock: 25
+    },
+    {
+      id: 6,
+      product: "Pizza6",
+      stock: 25
     }
   ];
 
@@ -134,19 +149,19 @@ function App() {
 
           <Route path="/Productos">
             <Header></Header>
-            <Productos></Productos>
+            <Productos onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
             <Header></Header>
-            <Productos></Productos>
+            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
             <Header></Header>
-            <Productos></Productos>
+            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 

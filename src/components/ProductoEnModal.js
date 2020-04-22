@@ -11,36 +11,39 @@ const ProductoModal = (props) => {
     return (
         <>
             <div>
-            
+
                 {props.cart && props.cart.length > 0 ? (
                     <ul>
                         {props.cart.map(product => {
                             return (
-                                
-                                    <div className="ProductoModal">
 
-                                        <img src={imagen} className="imagen"></img>
+                                <div className="ProductoModal">
 
-                                        <div className="info">
-                                            <h6>{product.product}</h6>
-                                            <h6>${product.stock}</h6>
+                                    <img src={imagen} className="imagen"></img>
 
-                                            <div className="botonComprar">
-                                                <InputGroup>
-                                                    <InputGroup.Prepend>
-                                                        <Button variant="light" className="boton3" onClick={() => props.onAddQuant(product, "add")} >+</Button>
-                                                    </InputGroup.Prepend>
-                                                    <FormControl aria-describedby="basic-addon1" placeholder={product.quantity}
-                                                        aria-label="Recipient's username" />
-                                                    <InputGroup.Prepend>
-                                                        <Button variant="light" className="boton3" onClick={() => props.onAddQuant(product, "remove")} >-</Button>
-                                                    </InputGroup.Prepend>
-                                                </InputGroup>
-                                            </div>
+                                    <div className="info">
+                                        <h6>{product.product}</h6>
+                                        <h6>${product.stock}</h6>
 
+                                        <div className="botonComprar">
+                                            <InputGroup>
+                                                <InputGroup.Prepend>
+                                                    <Button variant="light" className="boton4" onClick={() => props.onAddQuant(product, "add")} >+</Button>
+                                                </InputGroup.Prepend>
+                                                
+                                                <FormControl aria-describedby="basic-addon1" placeholder={product.quantity}
+                                                    aria-label="Recipient's username" />
+                                               
+                                                <InputGroup.Prepend>
+                                                    <Button variant="light" className="boton4" onClick={() => props.onAddQuant(product, "remove")} >-</Button>
+                                                </InputGroup.Prepend>
+                                            </InputGroup>
                                         </div>
+
                                     </div>
-                                
+                                </div>
+                               
+
                             );
                         })}
                     </ul>

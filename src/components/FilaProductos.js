@@ -15,22 +15,23 @@ const FilaProductos = (props) => {
         <>
             <div className="Promociones">
 
-                    <Title nombre={props.nombre}></Title>
+                <Title nombre={props.nombre}></Title>
 
                 {/*-----PRODUCT LIST -------- */}
-                <CardDeck className="carddeck" >
+                <div className="carddeck" >
                     { 
                     props.products && props.products.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} nombre={product.product} cart={props.cart}></Producto>
                     })
                     }
-                </CardDeck>
-                
-
+                </div>
+                    
+                {/* ------Fila PRODUCTOS
                 <CardDeck className="carddeck">
                     <Producto onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} products={props.products}></Producto>
                     <Producto onAddToCart={props.onAddToCart} products={props.products}></Producto>
                     <Producto onAddToCart={props.onAddToCart} products={props.products}></Producto>
                 </CardDeck>
+                */ }
 
             </div>
         </>
