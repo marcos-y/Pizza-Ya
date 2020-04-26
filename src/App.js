@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Carousel1 from './components/Carousel1';
@@ -6,6 +6,10 @@ import Promociones from './components/Promociones';
 import Title from './components/Title';
 import Pizzeria from './components/Pizzeria';
 import Footer from './components/Footer';
+
+import imagen1 from './components/pizza1.jpg';
+import imagen2 from './components/pizza2.jpg';
+import imagen3 from './components/pizza3.jpg';
 
 import img1 from './components/pizza_hut.jpg';
 import img2 from './components/logoContinental1.jpg';
@@ -25,6 +29,9 @@ import Admin from './components/Admin/Admin';
 import MisProductos from './components/Admin/MisProductos';
 import Banners from './components/Admin/Banners';
 import Tienda from './components/Admin/Tienda';
+import AdminApp from './components/AdminApp/AdminApp.js';
+
+
 
 function App() {
 
@@ -40,35 +47,120 @@ function App() {
   const products = [
     {
       id: 1,
-      product: "Pizza1",
-      stock: 12
+      product: "Pizza especial",
+      stock: 12,
+      img: imagen1
     },
     {
       id: 2,
-      product: "Pizza2",
-      stock: 30
+      product: "Muzzarela",
+      stock: 30,
+      img: imagen2
     },
     {
       id: 3,
-      product: "Pizza3",
-      stock: 25
+      product: "Cantimpalo",
+      stock: 25,
+      img: imagen3
     },
     {
       id: 4,
-      product: "Pizza4",
-      stock: 25
+      product: "Fugazzeta",
+      stock: 25,
+      img: imagen1
     },
     {
       id: 5,
-      product: "Pizza5",
-      stock: 25
+      product: "Pollo y queso",
+      stock: 25,
+      img: imagen2
     },
     {
       id: 6,
-      product: "Pizza6",
-      stock: 25
+      product: "Jamon y queso",
+      stock: 25,
+      img: imagen3
     }
   ];
+
+  const promos = [
+
+    {
+      id: 1,
+      product: "Pizza especial mas pepsi",
+      stock: 12,
+      img: imagen1
+    },
+    {
+      id: 2,
+      product: "Muzzarela mas papas",
+      stock: 30,
+      img: imagen2
+    },
+    {
+      id: 3,
+      product: "Cantimpalo mas cerveza",
+      stock: 25,
+      img: imagen3
+    },
+    {
+      id: 4,
+      product: "Fugazzeta y postre",
+      stock: 25,
+      img: imagen1
+    },
+    {
+      id: 5,
+      product: "Pollo y queso con snacks",
+      stock: 25,
+      img: imagen2
+    },
+    {
+      id: 6,
+      product: "Jamon y queso con limonada",
+      stock: 25,
+      img: imagen3
+    }
+  ]
+
+  const pizzeria1 = [
+    {
+      id: 1,
+      product: "Pizza napolitana",
+      stock: 12,
+      img: imagen1
+    },
+    {
+      id: 2,
+      product: "Pizza a Taglio",
+      stock: 30,
+      img: imagen2
+    },
+    {
+      id: 3,
+      product: "Pizza estilo New York",
+      stock: 25,
+      img: imagen3
+    },
+    {
+      id: 4,
+      product: "Pizza Argentina",
+      stock: 25,
+      img: imagen1
+    },
+    {
+      id: 5,
+      product: "Deep dish pizza o pizza estilo Chicago",
+      stock: 25,
+      img: imagen2
+    },
+    {
+      id: 6,
+      product: "Sfincione",
+      stock: 25,
+      img: imagen3
+    }
+  ]
 
   const [cart, setCart] = useState([]);
 
@@ -123,33 +215,39 @@ function App() {
 
             <Header></Header>
             <Carousel1></Carousel1>
-            <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Promociones>
+            <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
             <Title nombre="Pizzerias"></Title>
-            <Pizzeria nombre="Pizza Hut" img={img1} ></Pizzeria>
+
+            <Pizzeria nombre="Pizza Hut" img={img1}></Pizzeria>
             <br></br>
             <br></br>
+
             <Pizzeria nombre="La Continental" img={img2}></Pizzeria>
             <br></br>
             <br></br>
+
             <Pizzeria nombre="Domino's" img={img3}></Pizzeria>
             <br></br>
             <br></br>
+
             <Pizzeria nombre="Papa John" img={img4}></Pizzeria>
             <br></br>
             <br></br>
+
             <Pizzeria nombre="La Tradicional" img={img5}></Pizzeria>
             <br></br>
             <br></br>
+
             <Pizzeria nombre="La Pizzada" img={img6}></Pizzeria>
             <br></br>
             <br></br>
+
             <Footer></Footer>
           </Route>
 
 
           <Route path="/Productos">
             <Header></Header>
-            <Productos onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
@@ -184,6 +282,10 @@ function App() {
           <Route path="/MiTienda">
             <Admin></Admin>
             <Tienda></Tienda>
+          </Route>
+
+          <Route path="/AdminApp">
+            <AdminApp></AdminApp>
           </Route>
 
         </Switch>

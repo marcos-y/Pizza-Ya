@@ -28,7 +28,7 @@ const Footer = () => {
     return (
         <>
 
-            <div className="footer" id="contacto">
+            <div className="footer">
                 <div className="info2">
                     <h5>Telefono: +54 3416 324589</h5>
                     <h5>Email:PizzaYa@gmail.com</h5>

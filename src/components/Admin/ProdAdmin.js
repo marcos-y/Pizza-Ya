@@ -1,19 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
-import {
-    Link
-} from "react-router-dom";
 
-import fork from '../fork.png';
 import './ProdAdmin.css';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
 import FormControl from 'react-bootstrap/FormControl';
+import Form from 'react-bootstrap/Form';
 
 
 
 const ProdAdmin = (props) => {
+
+    const [productos, setProductos] = useState([]);
+
+    const [nombre, setNombre] = useState("");
+    const [descripcion, setDescripcion] = useState("");
+    const [categoria, setCategoria] = useState("");
+    const [precio, setPrecio] = useState("");
+    const [imagen,setImagen] = useState("");
+
+    const handleChangeNombre = event => setNombre(event.target.value);
+    const handleChangeDescripcion = event => setDescripcion(event.target.value);
+    const handleChangeCategoria = event => setCategoria(event.target.value);
+    const handleChangePrecio = event => setPrecio(event.target.value);
+    const handleChangeImagen = event => setImagen(event.target.value);
+
+    const handleSubmit = () => {
+        setShow(false);
+        const producto = { nombre, descripcion, categoria, precio };
+        setProductos([...productos, producto]);
+        console.log(productos);
+    }
 
     const [show, setShow] = useState(false);
 
@@ -41,13 +59,13 @@ const ProdAdmin = (props) => {
 
                 <div className="boton1">
                     <Button variant="danger" size="sm">Ocultar</Button>
-                    <Button variant="info" size="sm" className="botonAzul"onClick={handleShow}>Editar</Button>
+                    <Button variant="info" size="sm" className="botonAzul" onClick={handleShow}>Editar</Button>
                 </div>
 
             </div>
 
 
-           {/* MODAAL */}
+            {/* MODAAL */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Editar producto</Modal.Title>
@@ -62,6 +80,8 @@ const ProdAdmin = (props) => {
                                 placeholder="Nombre"
                                 aria-label="Username"
                                 aria-describedby="basic-addon1"
+                                onChange={handleChangeNombre}
+                                value={nombre}
                             />
                         </InputGroup>
 
@@ -74,6 +94,8 @@ const ProdAdmin = (props) => {
                                 placeholder="Descripcion"
                                 aria-label="Username"
                                 aria-describedby="basic-addon1"
+                                onChange={handleChangeDescripcion}
+                                value={descripcion}
                             />
                         </InputGroup>
 
@@ -86,6 +108,8 @@ const ProdAdmin = (props) => {
                                 placeholder="Categoria"
                                 aria-label="Username"
                                 aria-describedby="basic-addon1"
+                                onChange={handleChangeCategoria}
+                                value={categoria}
                             />
                         </InputGroup>
 
@@ -99,6 +123,8 @@ const ProdAdmin = (props) => {
                                 placeholder="Precio"
                                 aria-label="Username"
                                 aria-describedby="basic-addon1"
+                                onChange={handleChangePrecio}
+                                value={precio}
                             />
                         </InputGroup>
 
@@ -107,25 +133,22 @@ const ProdAdmin = (props) => {
 
                     <label htmlFor="basic-url">Imagen:</label>
                     <div className="form1">
-
-                        <InputGroup className="mb-3">
-                            <InputGroup.Prepend>
-                                <Button variant="outline-secondary">Subir</Button>
-                                <Button variant="outline-secondary">Browse</Button>
-                            </InputGroup.Prepend>
-                            <FormControl aria-describedby="basic-addon1" />
-                        </InputGroup>
+                        <Form>
+                            <Form.File
+                                id="custom-file"
+                                label="Subir imagen"
+                                onChange={handleChangeImagen}
+                            />
+                        </Form>
                     </div>
 
                 </Modal.Body>
 
                 <Modal.Footer>
 
-                    <Link to="/Admin">
-                        <Button variant="success" onClick={handleClose}>
-                            Guardar
+                    <Button variant="success" onClick={handleSubmit}>
+                        Guardar
                         </Button>
-                    </Link>
 
                     <Button variant="primary" onClick={handleClose}>
                         Cerrar
@@ -133,8 +156,6 @@ const ProdAdmin = (props) => {
 
                 </Modal.Footer>
             </Modal>
-
-
 
         </>
     )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import logo from './logoAzul.png';
 import './Header.css';
 import Nav from 'react-bootstrap/Nav';
@@ -21,7 +21,23 @@ const Header = () => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () =>  setShow(true);
+
+    const[password,setPassword] = useState("");
+    const[user,setUser] = useState("");
+    const [users,setUsers] = useState([]);
+
+    const handleChangePassword = event => setPassword(event.target.value);
+    const handleChangeUser = event => setUser(event.target.value);
+
+    const handleSubmit = () =>{
+        const usuario = {user,password};
+        setUsers([...users,usuario]);
+        console.log(users);
+        setShow(false);  
+    }
+
+
 
     return (
         <>
@@ -43,6 +59,7 @@ const Header = () => {
                                     <NavDropdown.Item href="#action/3.2">Postres</NavDropdown.Item>
                                 </Link>
                             </NavDropdown>
+                                <Nav.Link href="#home" onClick={handleShow}>Admin</Nav.Link>
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
@@ -53,6 +70,8 @@ const Header = () => {
                 </Navbar>
 
 
+
+                 {/*MODAL DEL CLIENTE */}
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>LogIn</Modal.Title>
@@ -68,6 +87,8 @@ const Header = () => {
                                     placeholder="Username"
                                     aria-label="Username"
                                     aria-describedby="basic-addon1"
+                                    onChange={handleChangeUser}
+                                    value={user}
                                 />
                             </InputGroup>
                         </div>
@@ -80,6 +101,8 @@ const Header = () => {
                                     placeholder="Password"
                                     aria-label="Username"
                                     aria-describedby="basic-addon1"
+                                    onChange={handleChangePassword}
+                                    value={password}
                                 />
                             </InputGroup>
                         </div>
@@ -88,8 +111,8 @@ const Header = () => {
 
                     <Modal.Footer>
 
-                        <Link to="/Admin">
-                        <Button variant="outline-primary" onClick={handleClose}>
+                        <Link to='/Admin'>
+                        <Button variant="outline-primary" onClick={handleSubmit}>
                             Ingresar
                         </Button>
                         </Link>
@@ -100,6 +123,8 @@ const Header = () => {
 
                     </Modal.Footer>
                 </Modal>
+
+
             </div>
         </>
 

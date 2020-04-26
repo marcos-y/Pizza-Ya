@@ -15,12 +15,13 @@ const Producto = (props) => {
         props.onAddToCart(JSON.parse(props.product))
     }
 
+    
     return (
         <>
             <Card>
-                <Card.Img variant="top" src={img1} />
+                <Card.Img variant="top" src={props.img} />
                 <Card.Body>
-                    <Card.Title>{(props.nombre)}</Card.Title>
+                    <Card.Title>{props.nombre}</Card.Title>
                     <Card.Text>
                         This is a wider card with supporting text below as a natural lead-in to
                         additional content. This content is a little bit longer.
@@ -39,7 +40,7 @@ const Producto = (props) => {
                     
                     {/*---------------------------CART----------------------------*/}
                     <ProductoEnModal nombre={props.nombre} onAddQuant={props.onAddQuant} cart={props.cart} ></ProductoEnModal>
-                    <h6>Total:$ </h6>
+                    <h6>Total:$ {props.stock}</h6>
                 </Modal.Body>
 
                 <Modal.Footer>
@@ -47,7 +48,7 @@ const Producto = (props) => {
                         Confirmar pedido
           </Button>
                     <Button variant="secondary" onClick={handleClose}>
-                        Cerrar
+                        Seguir agregando al pedido
           </Button>
 
                 </Modal.Footer>

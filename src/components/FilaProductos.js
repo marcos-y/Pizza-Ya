@@ -1,12 +1,8 @@
 import React from 'react';
 import './FilaProductos.css';
-import CardDeck from 'react-bootstrap/CardDeck';
 import './Promociones.css'
 import Title from './Title';
 import './Promociones.css';
-import img1 from './pizza1.jpg';
-import img2 from './pizza2.jpg';
-import img3 from './pizza3.jpg';
 import Producto from './Producto.js';
 
 const FilaProductos = (props) => {
@@ -20,7 +16,7 @@ const FilaProductos = (props) => {
                 {/*-----PRODUCT LIST -------- */}
                 <div className="carddeck" >
                     { 
-                    props.products && props.products.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} nombre={product.product} cart={props.cart}></Producto>
+                    props.promos && props.promos.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
                     })
                     }
                 </div>

@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import imagen from './pizza1.jpg';
+import React from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import './ProductoEnModal.css';
 
 const ProductoModal = (props) => {
-
 
     return (
         <>
@@ -19,7 +17,7 @@ const ProductoModal = (props) => {
 
                                 <div className="ProductoModal">
 
-                                    <img src={imagen} className="imagen"></img>
+                                    <img src={product.img} className="imagen"></img>
 
                                     <div className="info">
                                         <h6>{product.product}</h6>
@@ -50,6 +48,7 @@ const ProductoModal = (props) => {
                 ) : (
                         <p>No products on cart</p>
                     )}
+                    
             </div>
 
 

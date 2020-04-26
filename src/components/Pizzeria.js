@@ -29,7 +29,7 @@ const Pizzeria = (props) => {
                 </div>
 
                 <div className="boton1">
-                    <Link to="Productos">
+                    <Link to="/Productos">
                         <Button variant="outline-success">Ver productos</Button>
                     </Link>
                 </div>
