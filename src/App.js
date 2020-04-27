@@ -35,15 +35,6 @@ import AdminApp from './components/AdminApp/AdminApp.js';
 
 function App() {
 
-  {/* A JSX comment
-      ACA DEBERIAN LLEGAR LAS PROPS Y FCIONES, HASTA PRODUCTO.JS:
-      PIZZERIA=> PRODUCTOS y PROMOCIONES=> FILAPRODUCTOS => PRODUCTO
-     <ProductList products={products} handleAddToCart={handleAddToCart} />
-      <Cart cart={cart} handleQuantity={handleQuantity} />
-      CART Y HANDLE QUANT => PROMOS =>FILA PROD =>PROD =>PROD EN MODAL
-  };
-  */}
-
   const products = [
     {
       id: 1,

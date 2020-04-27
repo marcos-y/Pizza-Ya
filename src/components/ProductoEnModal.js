@@ -17,7 +17,7 @@ const ProductoModal = (props) => {
 
                                 <div className="ProductoModal">
 
-                                    <img src={product.img} className="imagen"></img>
+                                    <img src={product.img} alt="" className="imagen"></img>
 
                                     <div className="info">
                                         <h6>{product.product}</h6>

@@ -16,10 +16,10 @@ const Admin = () => {
         <>
             <div className="Header1">
 
-                <img src={logo} className="logoheader"></img>
+                <img src={logo} alt="" className="logoheader"></img>
 
                 <div className="topright">
-                    <img src={admin} width="50px" height="50px"></img>
+                    <img src={admin} alt="" width="50px" height="50px"></img>
                     <Link to="/">
                     <Button variant="primary">Cerrar sesion</Button>
                     </Link>
@@ -42,15 +42,15 @@ const Admin = () => {
                 <br></br>
                 <Navbar bg="light" variant="light" expand="lg">
                     <Link to="/">
-                        <Navbar.Brand href="#home"></Navbar.Brand>
+                        <Navbar.Brand ></Navbar.Brand>
                     </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home">Cerrar tienda</Nav.Link>
-                            <Nav.Link href="#home">Copiar mensajes para clientes</Nav.Link>
+                            <Nav.Link >Cerrar tienda</Nav.Link>
+                            <Nav.Link >Copiar mensajes para clientes</Nav.Link>
                             <Link to="/Banners">
-                            <Nav.Link href="#home">Mis banners</Nav.Link>
+                            <Nav.Link >Mis banners</Nav.Link>
                             </Link>
                         </Nav>
                         

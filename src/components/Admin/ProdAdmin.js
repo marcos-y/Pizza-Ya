@@ -28,7 +28,7 @@ const ProdAdmin = (props) => {
 
     const handleSubmit = () => {
         setShow(false);
-        const producto = { nombre, descripcion, categoria, precio };
+        const producto = { nombre, descripcion, categoria, precio,imagen };
         setProductos([...productos, producto]);
         console.log(productos);
     }
@@ -43,10 +43,10 @@ const ProdAdmin = (props) => {
             <div className="ProdAdmin">
 
                 <div className="imglogo">
-                    <img src={props.img} className="logo"></img>
+                    <img src={props.img} alt="" className="logo"></img>
                     <div className="descripcion">
                         <div className="clase">
-                            <img src={props.icon} className="fork"></img>
+                            <img src={props.icon} alt="" className="fork"></img>
                             <h6>{props.clase}</h6>
                         </div>
 
@@ -138,6 +138,7 @@ const ProdAdmin = (props) => {
                                 id="custom-file"
                                 label="Subir imagen"
                                 onChange={handleChangeImagen}
+                                defaultValue={imagen}
                             />
                         </Form>
                     </div>

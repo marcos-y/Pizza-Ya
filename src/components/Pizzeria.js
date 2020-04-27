@@ -14,10 +14,10 @@ const Pizzeria = (props) => {
             <div className="Pizzeria">
 
                 <div className="imglogo">
-                    <img src={props.img} className="logo"></img>
+                    <img src={props.img} alt="" className="logo"></img>
                     <div className="descripcion">
                         <div className="clase">
-                            <img src={fork} className="fork"></img>
+                            <img src={fork} alt="" className="fork"></img>
                             <h6>Pizzas</h6>
                         </div>
                        

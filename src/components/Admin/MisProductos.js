@@ -22,10 +22,6 @@ import {
 
 const MisProductos = () => {
 
-    {/*1_AL EDITAR EL PRODUCTO LOS DATOS TIENEN QUE LLEGAR HASTA APP.JS => DENTRO DE APP A PIZZERIA*/ }
-    {/*2_HAY QUE CONECTAR LOS PRODUCTOS EDITADOS CON LA BASE DE DATOS PARA EDITARLOS */ }
-
-
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
