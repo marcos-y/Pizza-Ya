@@ -30,7 +30,9 @@ import MisProductos from './components/Admin/MisProductos';
 import Banners from './components/Admin/Banners';
 import Tienda from './components/Admin/Tienda';
 import AdminApp from './components/AdminApp/AdminApp.js';
-
+import PedidoConfirmado from './components/PedidoConfirmado.js';
+import RetiroSucursal from './components/RetiroSucursal';
+import EnvioDom from './components/EnvioDom.js';
 
 
 function App() {
@@ -277,6 +279,18 @@ function App() {
 
           <Route path="/AdminApp">
             <AdminApp></AdminApp>
+          </Route>
+
+          <Route path="/PedidoConfirmado">
+            <PedidoConfirmado></PedidoConfirmado>
+          </Route>
+
+          <Route path="/RetiroSucursal">
+            <RetiroSucursal></RetiroSucursal>
+          </Route>
+
+          <Route path="/EnvioDom">
+            <EnvioDom></EnvioDom>
           </Route>
 
         </Switch>

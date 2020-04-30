@@ -6,6 +6,10 @@ import './Producto.css';
 import Modal from 'react-bootstrap/Modal';
 import ProductoEnModal from './ProductoEnModal';
 
+import {
+   Link,
+} from "react-router-dom";
+
 const Producto = (props) => {
 
     const [show, setShow] = useState(false);
@@ -15,7 +19,7 @@ const Producto = (props) => {
         props.onAddToCart(JSON.parse(props.product))
     }
 
-    
+
     return (
         <>
             <Card>
@@ -37,16 +41,18 @@ const Producto = (props) => {
                     <Modal.Title>Mi pedido</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    
+
                     {/*---------------------------CART----------------------------*/}
                     <ProductoEnModal nombre={props.nombre} onAddQuant={props.onAddQuant} cart={props.cart} ></ProductoEnModal>
                     <h6>Total:$ {props.stock}</h6>
                 </Modal.Body>
 
                 <Modal.Footer>
-                    <Button variant="primary" onClick={handleClose}>
-                        Confirmar pedido
-          </Button>
+                    <Link to="/PedidoConfirmado">
+                        <Button variant="primary" onClick={handleClose}>
+                            Confirmar pedido
+                        </Button>
+                    </Link>
                     <Button variant="secondary" onClick={handleClose}>
                         Seguir agregando al pedido
           </Button>
