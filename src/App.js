@@ -18,6 +18,20 @@ import img4 from './components/pizzajhon.png';
 import img5 from './components/tradicional.jpg';
 import img6 from './components/pizzada.jpg';
 
+import bebida1 from './components/stella.jpg';
+import bebida2 from './components/corona.jpg';
+import bebida3 from './components/campari.jpg';
+import bebida4 from './components/fernet.jpg';
+import bebida5 from './components/gancia.jpg';
+import bebida6 from './components/coca.jpg';
+
+import postre1 from './components/flan.jpg';
+import postre2 from './components/lemon.jpg';
+import postre3 from './components/cafe.jpg';
+import postre4 from './components/chocolate.jpg';
+import postre5 from './components/gelatina.jpg';
+import postre6 from './components/helado.jpg';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -116,7 +130,89 @@ function App() {
     }
   ]
 
-  
+  const bebidas = [
+    {
+      id: 1,
+      product: "Cerveza Stella Artois",
+      stock: 25,
+      img: bebida1
+    },
+    {
+      id: 2,
+      product: "Cerveza Corona",
+      stock: 25,
+      img: bebida2
+      
+    },
+    {
+      id: 3,
+      product: "Campari",
+      stock: 25,
+      img: bebida3
+
+    },
+    {
+      id: 4,
+      product: "Fernet",
+      stock: 25,
+      img: bebida4
+
+    },
+    {
+      id: 5,
+      product: "Gancia",
+      stock: 25,
+      img: bebida5
+
+    },
+    {
+      id: 6,
+      product: "Coca",
+      stock: 25,
+      img: bebida6
+
+    },
+  ]
+
+  const postres = [
+    {
+      id: 1,
+      product: "Flan",
+      stock: 25,
+      img: postre1
+    },
+    {
+      id: 2,
+      product: "Lemon Pie",
+      stock: 25,
+      img: postre2
+    },
+    {
+      id: 3,
+      product: "Postre de cafe",
+      stock: 25,
+      img: postre3
+    },
+    {
+      id: 4,
+      product: "Postre chocolate",
+      stock: 25,
+      img: postre4
+    },
+    {
+      id: 5,
+      product: "Gelatina",
+      stock: 25,
+      img: postre5
+    },
+    {
+      id: 6,
+      product: "Helado",
+      stock: 25,
+      img: postre6
+    }
+  ]
+
 
   const pizzeria1 = [
     {
@@ -248,13 +344,13 @@ function App() {
 
           <Route path="/Bebidas">
             <Header></Header>
-            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart} ></Productos>
+            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
             <Header></Header>
-            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} products={products} cart={cart}></Productos>
+            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 

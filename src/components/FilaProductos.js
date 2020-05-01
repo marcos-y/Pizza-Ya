@@ -25,6 +25,17 @@ const FilaProductos = (props) => {
                     
                     })
                     }
+                     { 
+                    props.bebidas && props.bebidas.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    
+                    })
+                    }
+
+                    { 
+                    props.postres && props.postres.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    
+                    })
+                    }
                 </div>
                     
                 {/* ------Fila PRODUCTOS
