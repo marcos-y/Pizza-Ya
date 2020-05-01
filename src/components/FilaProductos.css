@@ -1,6 +1,12 @@
 .Promociones{
     margin:auto;
+    background-color:white;
+    max-width:1000px;
+    width: 100%;
+    height:auto;
+
 }
+
 
 .carddeck{
     display:flex;

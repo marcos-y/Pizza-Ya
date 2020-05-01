@@ -1,5 +1,5 @@
-.Pizzeria{
-    max-width:1300px;
+.pizzeria{
+    max-width:1000px;
     width:100%;
     height:auto;
     margin:auto;
@@ -8,6 +8,8 @@
     padding:0px;
     justify-content: space-around;
     align-items:center;
+    background-color: white;
+    padding:20px;
 }
 
 .imglogo{

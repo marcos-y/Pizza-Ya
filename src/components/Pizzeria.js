@@ -11,7 +11,7 @@ const Pizzeria = (props) => {
 
     return (
         <>
-            <div className="Pizzeria">
+            <div className="pizzeria">
 
                 <div className="imglogo">
                     <img src={props.img} alt="" className="logo"></img>
@@ -29,11 +29,12 @@ const Pizzeria = (props) => {
                 </div>
 
                 <div className="boton1">
-                    <Link to="/Productos">
+                    <Link to={`/Pizzeria1/${(props.nombre)}`}>
                         <Button variant="outline-success">Ver productos</Button>
                     </Link>
                 </div>
-
+    
+                
             </div>
 
 

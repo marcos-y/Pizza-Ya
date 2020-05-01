@@ -7,14 +7,16 @@
     font-family: 'Roboto', sans-serif;
     width:100%;
     max-width:1000px;
-    height:auto;                                        
+    height:auto;                 
+    background-color: white;                       
 }
 
 .title{
     padding:25px;
+    background: white;
 }
 
 hr{
-    background-color: gray;
+    background-color:gray;
     width: 290px;
 }

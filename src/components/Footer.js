@@ -38,14 +38,14 @@ const Footer = () => {
 
                 <div className="forms">
 
-                    <h3>Dejanos un mensaje</h3>
+                    <h3 className="titulo">Dejanos un mensaje</h3>
                     <label htmlFor="basic-url">Nombre</label>
                     <InputGroup>
                         <FormControl aria-describedby="basic-addon3" onChange={handleChangeNombre} value={nombre} />
                     </InputGroup>
 
 
-                    <label htmlFor="basic-url">En que podemos ayudarte?</label>
+                    <label htmlFor="basic-url" className="titulo">En que podemos ayudarte?</label>
                     <InputGroup >
                         <FormControl aria-describedby="basic-addon3" onChange={handleChangeMensaje} value={mensaje} />
                     </InputGroup>
@@ -67,7 +67,7 @@ const Footer = () => {
                 <div className="mail">
 
                     <div className="comercios">
-                        <h3>¿Queres adherir tu comercio?</h3>
+                        <h3 className="titulo">¿Queres adherir tu comercio?</h3>
                         <h5>Dejanos tu numero y nos contactaremos con vos</h5>
                         <InputGroup >
                             <FormControl aria-describedby="basic-addon3" />

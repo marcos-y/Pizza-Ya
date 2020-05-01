@@ -2,9 +2,11 @@
     margin:auto;
     display:flex;
     flex-direction:column;
-    max-width:950px;
+    max-width:1000px;
     width:100%;
     height:auto;
+    background-color: white;
+    margin-bottom:0px;
 }
 
 .logo1{

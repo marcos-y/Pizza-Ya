@@ -17,6 +17,12 @@ const FilaProductos = (props) => {
                 <div className="carddeck" >
                     { 
                     props.promos && props.promos.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    
+                    })
+                    }
+                    { 
+                    props.pizzeria1 && props.pizzeria1.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    
                     })
                     }
                 </div>

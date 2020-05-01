@@ -12,6 +12,10 @@
     padding:10px;
 }
 
+.titulo{
+    text-align:left;
+}
+
 .forms{
     color:white;
     font-family:'Roboto';

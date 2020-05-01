@@ -116,6 +116,8 @@ function App() {
     }
   ]
 
+  
+
   const pizzeria1 = [
     {
       id: 1,
@@ -205,42 +207,42 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-
+            
             <Header></Header>
+            
             <Carousel1></Carousel1>
+            
             <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
+            
             <Title nombre="Pizzerias"></Title>
 
-            <Pizzeria nombre="Pizza Hut" img={img1}></Pizzeria>
-            <br></br>
-            <br></br>
-
-            <Pizzeria nombre="La Continental" img={img2}></Pizzeria>
-            <br></br>
-            <br></br>
-
-            <Pizzeria nombre="Domino's" img={img3}></Pizzeria>
-            <br></br>
-            <br></br>
-
-            <Pizzeria nombre="Papa John" img={img4}></Pizzeria>
-            <br></br>
-            <br></br>
-
-            <Pizzeria nombre="La Tradicional" img={img5}></Pizzeria>
-            <br></br>
-            <br></br>
-
-            <Pizzeria nombre="La Pizzada" img={img6}></Pizzeria>
-            <br></br>
-            <br></br>
+            <Pizzeria nombre="Pizza Hut" img={img1} pizzeria1={pizzeria1}></Pizzeria>
+           
+            <Pizzeria nombre="La Continental" img={img2} pizzeria1={pizzeria1}></Pizzeria>
+           
+            <Pizzeria nombre="Domino's" img={img3} pizzeria1={pizzeria1}></Pizzeria>
+           
+            <Pizzeria nombre="Papa John" img={img4} pizzeria1={pizzeria1}></Pizzeria>
+           
+            <Pizzeria nombre="La Tradicional" img={img5} pizzeria1={pizzeria1}></Pizzeria>
+           
+            <Pizzeria nombre="La Pizzada" img={img6} pizzeria1={pizzeria1}></Pizzeria>
 
             <Footer></Footer>
+         
+
           </Route>
 
 
-          <Route path="/Productos">
+          <Route path="/Productos/:prods">
             <Header></Header>
+            <Productos></Productos>
+            <Footer></Footer>
+          </Route>
+
+          <Route path="/Pizzeria1/:nombre">
+            <Header></Header>
+            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 

@@ -1,6 +1,9 @@
 .Carousel1{
     margin:auto;
-    max-width:920px;
+    max-width:1000px;
     width:100%;
     height:auto;
+    background-color:white;
+    padding:20px;
+    margin-top:0px;
 }

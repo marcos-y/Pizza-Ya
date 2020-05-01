@@ -69,8 +69,6 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Navbar>
 
-
-
                  {/*MODAL DEL CLIENTE */}
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
