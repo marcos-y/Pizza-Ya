@@ -6,6 +6,7 @@ import Promociones from './components/Promociones';
 import Title from './components/Title';
 import Pizzeria from './components/Pizzeria';
 import Footer from './components/Footer';
+import ListadoPizzerias from './components/ListadoPizzerias';
 
 import imagen1 from './components/pizza1.jpg';
 import imagen2 from './components/pizza2.jpg';
@@ -253,6 +254,33 @@ function App() {
     }
   ]
 
+  const listadoPizzerias = [
+    {
+      nombre: "Pizza Hut",
+      imagen: img1
+    },
+    {
+      nombre:"La Continental",
+      imagen: img2
+    },
+    {
+      nombre:"Domino's",
+      imagen: img3
+    },
+    {
+      nombre:"Papa John",
+      imagen: img4
+    },
+    {
+      nombre:"La tradicional",
+      imagen: img5
+    },
+    {
+      nombre:"La pizzada",
+      imagen: img6
+    }
+  ]
+
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = product => {
@@ -305,24 +333,14 @@ function App() {
           <Route exact path="/">
             
             <Header></Header>
-            
+
             <Carousel1></Carousel1>
-            
+           
             <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
             
             <Title nombre="Pizzerias"></Title>
-
-            <Pizzeria nombre="Pizza Hut" img={img1} pizzeria1={pizzeria1}></Pizzeria>
            
-            <Pizzeria nombre="La Continental" img={img2} pizzeria1={pizzeria1}></Pizzeria>
-           
-            <Pizzeria nombre="Domino's" img={img3} pizzeria1={pizzeria1}></Pizzeria>
-           
-            <Pizzeria nombre="Papa John" img={img4} pizzeria1={pizzeria1}></Pizzeria>
-           
-            <Pizzeria nombre="La Tradicional" img={img5} pizzeria1={pizzeria1}></Pizzeria>
-           
-            <Pizzeria nombre="La Pizzada" img={img6} pizzeria1={pizzeria1}></Pizzeria>
+            <ListadoPizzerias  img1={img1}  img2={img2}  img3={img3} img4={img4}  img5={img5} img6={img6} pizzeria1={pizzeria1} listadoPizzerias={listadoPizzerias}></ListadoPizzerias>
 
             <Footer></Footer>
          
@@ -338,19 +356,19 @@ function App() {
 
           <Route path="/Pizzeria1/:nombre">
             <Header></Header>
-            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
+            <Productos nombre="productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
             <Header></Header>
-            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
+            <Productos nombre="bebidas" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
             <Header></Header>
-            <Productos  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
+            <Productos nombre="postres" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 

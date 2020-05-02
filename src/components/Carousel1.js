@@ -8,8 +8,6 @@ const Carousel1 = () => {
 
     return (
         <>
-        <br></br>
-        <br></br>
         <div className="Carousel1">
             <Carousel>
                 <Carousel.Item>
