@@ -7,7 +7,7 @@ const ListadoPizzerias = (props) =>{
         <>
             <div>
                 {
-                    props.listadoPizzerias.map(pizzeria =>{return <Pizzeria  nombre={pizzeria.nombre} img={pizzeria.imagen}  ></Pizzeria>   } )
+                    props.listadoPizzerias.map(pizzeria =>{return <Pizzeria key={pizzeria.id}  nombre={pizzeria.nombre} img={pizzeria.imagen} ></Pizzeria> } )
                 }
             </div>
            

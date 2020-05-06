@@ -28,3 +28,10 @@
     display:flex;
     flex-wrap:nowrap;
 }
+
+.caja{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:space-around;
+    align-items:baseline;
+}

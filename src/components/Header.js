@@ -4,7 +4,6 @@ import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
@@ -20,8 +19,13 @@ import {
 const Header = () => {
 
     const [show, setShow] = useState(false);
+    const [loginType,setloginType] = useState("");
     const handleClose = () => setShow(false);
-    const handleShow = () =>  setShow(true);
+    const handleShow = (type) =>  {
+        setloginType(type);
+        setShow(true);
+    }
+    
 
     const[password,setPassword] = useState("");
     const[user,setUser] = useState("");
@@ -36,8 +40,6 @@ const Header = () => {
         console.log(users);
         setShow(false);  
     }
-
-
 
     return (
         <>
@@ -59,13 +61,13 @@ const Header = () => {
                                     <NavDropdown.Item href="#action/3.2">Postres</NavDropdown.Item>
                                 </Link>
                             </NavDropdown>
-                                <Nav.Link onClick={handleShow}>Admin</Nav.Link>
+                                <Nav.Link onClick={()=>handleShow("AdminApp")}>Admin</Nav.Link>
                         </Nav>
-                        <Form inline>
+                        <div className="caja">
+                            <Button variant="light" className="boton3" onClick={()=>handleShow("Admin")}>Iniciar sesion</Button>
                             <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
                             <Button variant="outline-success">Buscar</Button>
-                            <Button variant="light" className="boton3" onClick={handleShow}>Iniciar sesion</Button>
-                        </Form>
+                        </div>
                     </Navbar.Collapse>
                 </Navbar>
 
@@ -109,7 +111,7 @@ const Header = () => {
 
                     <Modal.Footer>
 
-                        <Link to='/Admin'>
+                        <Link to={`/${loginType}`}>
                         <Button variant="outline-primary" onClick={handleSubmit}>
                             Ingresar
                         </Button>

@@ -29,9 +29,9 @@ import bebida6 from './components/coca.jpg';
 import postre1 from './components/flan.jpg';
 import postre2 from './components/lemon.jpg';
 import postre3 from './components/cafe.jpg';
-import postre4 from './components/chocolate.jpg';
+import postre4 from './components/postrechoco.jpg';
 import postre5 from './components/gelatina.jpg';
-import postre6 from './components/helado.jpg';
+import postre6 from './components/helado2.jpg';
 
 import {
   BrowserRouter as Router,
@@ -256,26 +256,32 @@ function App() {
 
   const listadoPizzerias = [
     {
+      id:1,
       nombre: "Pizza Hut",
       imagen: img1
     },
     {
+      id:2,
       nombre:"La Continental",
       imagen: img2
     },
     {
+      id:3,
       nombre:"Domino's",
       imagen: img3
     },
     {
+      id:4,
       nombre:"Papa John",
       imagen: img4
     },
     {
+      id:5,
       nombre:"La tradicional",
       imagen: img5
     },
     {
+      id:6,
       nombre:"La pizzada",
       imagen: img6
     }
@@ -328,6 +334,9 @@ function App() {
   return (
     <>
       <Router>
+
+      
+
         <Switch>
 
           <Route exact path="/">
@@ -340,10 +349,9 @@ function App() {
             
             <Title nombre="Pizzerias"></Title>
            
-            <ListadoPizzerias  img1={img1}  img2={img2}  img3={img3} img4={img4}  img5={img5} img6={img6} pizzeria1={pizzeria1} listadoPizzerias={listadoPizzerias}></ListadoPizzerias>
+            <ListadoPizzerias pizzeria1={pizzeria1} listadoPizzerias={listadoPizzerias}></ListadoPizzerias>
 
             <Footer></Footer>
-         
 
           </Route>
 
@@ -355,20 +363,20 @@ function App() {
           </Route>
 
           <Route path="/Pizzeria1/:nombre">
-            <Header></Header>
-            <Productos nombre="productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
+          <Header></Header>
+            <Productos nombre="Productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
             <Header></Header>
-            <Productos nombre="bebidas" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
+            <Productos nombre="Bebidas" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
             <Header></Header>
-            <Productos nombre="postres" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
+            <Productos nombre="Postres" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
@@ -411,6 +419,7 @@ function App() {
 
         </Switch>
 
+       
 
       </Router>
     </>

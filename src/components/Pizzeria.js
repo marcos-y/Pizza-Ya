@@ -29,8 +29,9 @@ const Pizzeria = (props) => {
                 </div>
 
                 <div className="boton1">
-                    <Link to={`/Pizzeria1/${(props.nombre)}`}>
-                        <Button variant="outline-success">Ver productos</Button>
+                    <Link className="btn btn-outline-success" to={`/Pizzeria1/${(props.nombre)}`}>
+                        Ver producto
+
                     </Link>
                 </div>
     

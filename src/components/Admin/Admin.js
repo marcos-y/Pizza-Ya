@@ -27,9 +27,6 @@ const Admin = () => {
 
             </div>
 
-            
-            <br></br>
-            <br></br>
             <div className="menu">
                 <Link to="/MiTienda">
                     <Button variant="info" size="lg">Mi tienda</Button>

@@ -1,13 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import {
-    Link 
-}
-from 'react-router-dom';
-
 import './Sucursal.css';
 import logoContinental from './logoContinental1.jpg';
-import fork from './fork.png';
 
 const Sucursal = () => {
 

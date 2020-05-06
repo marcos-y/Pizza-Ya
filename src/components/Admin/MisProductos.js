@@ -32,13 +32,13 @@ const MisProductos = () => {
     const [descripcion, setDescripcion] = useState("");
     const [categoria, setCategoria] = useState("");
     const [precio, setPrecio] = useState("");
-    const [imagen,setImagen] = useState("");
+    const [imagen, setImagen] = useState("");
 
     const handleChangeNombre = event => setNombre(event.target.value);
     const handleChangeDescripcion = event => setDescripcion(event.target.value);
     const handleChangeCategoria = event => setCategoria(event.target.value);
     const handleChangePrecio = event => setPrecio(event.target.value);
-    const handleImagen = event => setImagen(event.target.files);               
+    const handleChangeImagen = event => setImagen(event.target.files);
 
     const handleSubmit = () => {
         setShow(false);
@@ -128,18 +128,16 @@ const MisProductos = () => {
                         </InputGroup>
 
                     </div>
-
+                    
 
                     <label htmlFor="basic-url">Imagen:</label>
                     <div className="form1">
-
                         <Form>
                             <Form.File
                                 id="custom-file"
-                                label="Subir imagen"
+                                label="Custom file input"
                                 custom
-                                onChange={handleImagen}
-                                value={imagen}
+                                value={imagen}  onChange={handleChangeImagen}
                             />
                         </Form>
                     </div>

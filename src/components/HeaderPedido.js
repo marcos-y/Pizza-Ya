@@ -3,7 +3,6 @@ import './HeaderPedido.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form'
-import FormGroup from 'react-bootstrap/FormGroup';
 import {
     Link
 } from "react-router-dom";

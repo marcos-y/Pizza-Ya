@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './FilaProductos.css';
 import './Promociones.css'
 import Title from './Title';
@@ -6,6 +6,11 @@ import './Promociones.css';
 import Producto from './Producto.js';
 
 const FilaProductos = (props) => {
+
+    useEffect(()=> {
+        window.scrollTo(0,0)
+    }
+    ,[])
 
     return (
         <>

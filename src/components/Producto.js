@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import img1 from './pizza1.jpg';
 import './Producto.css';
 import Modal from 'react-bootstrap/Modal';
 import ProductoEnModal from './ProductoEnModal';
