@@ -341,7 +341,7 @@ function App() {
 
           <Route exact path="/">
             
-            <Header></Header>
+            <Header listadoPizzerias={listadoPizzerias}></Header>
 
             <Carousel1></Carousel1>
            

@@ -1,5 +1,6 @@
 import React from 'react';
 import Pizzeria from './Pizzeria';
+import './ListadoPizzerias.css';
 
 const ListadoPizzerias = (props) =>{
 

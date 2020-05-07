@@ -16,7 +16,7 @@ const Admin = () => {
         <>
             <div className="Header1">
 
-                <img src={logo} alt="" className="logoheader"></img>
+                <img src={logo} alt="" className="logoheader" ></img>
 
                 <div className="topright">
                     <img src={admin} alt="" width="50px" height="50px"></img>
@@ -35,8 +35,7 @@ const Admin = () => {
                     <Button variant="success" size="lg">Mis productos</Button>
                 </Link>
                 
-                <br></br>
-                <br></br>
+            
                 <Navbar bg="light" variant="light" expand="lg">
                     <Link to="/">
                         <Navbar.Brand ></Navbar.Brand>

@@ -1,19 +1,22 @@
 .pizzeria{
+    margin:auto;
     max-width:1000px;
     width:100%;
     height:auto;
-    margin:auto;
     display:flex;
+    justify-content: space-between;
     flex-wrap:wrap;
     padding:0px;
-    justify-content: space-around;
     align-items:center;
     background-color: white;
-    padding:20px;
+    padding:50px;
+ 
 }
 
 .imglogo{
-    width:400px;
+    max-width:400px;
+    width:100%;
+    height: auto;
     display:flex;
     flex-wrap:nowrap;
 }
@@ -21,16 +24,17 @@
 .logo{
     width:150px;
     height:150px;
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .descripcion{
     display:flex;
     flex-direction:column;
-    margin-left:20px;
+    justify-content: row;
+    align-items: flex-start;
 }
 
-.boton1{
+.boton8{
     max-width:150px;
     height:auto;
     width:100%;
@@ -53,7 +57,7 @@ h6{
 
 @media screen and (max-width: 600px) {
     .Pizzeria{
-        display:flex;
-        justify-content:space-between;
+        display:flex !important;
+        justify-content:space-between !important;
     }
   }
