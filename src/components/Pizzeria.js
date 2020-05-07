@@ -30,7 +30,7 @@ const Pizzeria = (props) => {
 
                 <div className="boton1">
                     <Link className="btn btn-outline-success" to={`/Pizzeria1/${(props.nombre)}`}>
-                        Ver producto
+                        Ver productos
 
                     </Link>
                 </div>

@@ -47,6 +47,51 @@ const MisProductos = () => {
         console.log(productos);
     }
 
+    const productoAdmin = [
+        {
+            id: 1,
+            nombre: "Super Pizza",
+            imagen: img1,
+            tipo: "Pizzas",
+            icono: icon,
+        },
+        {
+            id: 2,
+            nombre: "Super Pizza",
+            imagen: img1,
+            tipo: "Pizzas",
+            icono: icon,
+        },
+        {
+            id: 3,
+            nombre: "Empanada",
+            imagen: img2,
+            tipo: "Empanadas",
+            icono: icon,
+        },
+        {
+            id: 4,
+            nombre: "Hamburguesa",
+            imagen: img3,
+            tipo: "Hamburguesas",
+            icono: icon
+        },
+        {
+            id: 5,
+            nombre: "Cerveza",
+            imagen: img5,
+            tipo: "Bebidas",
+            icono: icon2,
+        },
+        {
+            id: 6,
+            nombre: "Postre",
+            imagen: img4,
+            tipo: "Postres",
+            icono: icon3,
+        },
+    ]
+
     return (
         <>
             <div className="MisProductos">
@@ -57,13 +102,12 @@ const MisProductos = () => {
                 </div>
             </div>
 
-            <ProdAdmin nombre="Super Pizza" clase="Pizzas" img={img1} icon={icon}></ProdAdmin>
-            <ProdAdmin nombre="Super Pizza" clase="Pizzas" img={img1} icon={icon}></ProdAdmin>
-            <ProdAdmin nombre="Empanada" clase="Empanadas" img={img2} icon={icon}></ProdAdmin>
-            <ProdAdmin nombre="Hamburguesa " clase="Hamburguesas" img={img3} icon={icon}></ProdAdmin>
-            <ProdAdmin nombre="Cerveza" clase="Bebidas" img={img5} icon={icon2}></ProdAdmin>
-            <ProdAdmin nombre="Postre " clase="Postres" img={img4} icon={icon3}></ProdAdmin>
-
+            <div>
+                {
+                    productoAdmin.map(product => { return <ProdAdmin key={product.id} nombre={product.nombre} clase={product.tipo} img={product.imagen} icon={product.icono}></ProdAdmin> }
+                    )
+                }
+            </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -128,7 +172,7 @@ const MisProductos = () => {
                         </InputGroup>
 
                     </div>
-                    
+
 
                     <label htmlFor="basic-url">Imagen:</label>
                     <div className="form1">
@@ -137,7 +181,7 @@ const MisProductos = () => {
                                 id="custom-file"
                                 label="Custom file input"
                                 custom
-                                value={imagen}  onChange={handleChangeImagen}
+                                value={imagen} onChange={handleChangeImagen}
                             />
                         </Form>
                     </div>

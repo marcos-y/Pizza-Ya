@@ -31,12 +31,12 @@
 }
 
 .boton3{
-    max-width:200px !important;
+    max-width:100px !important;
     height:auto;
     width:100%;
     padding:10px;
     display:flex;
-    justify-content:space-evenly;
+    justify-content:space-around;
 }
 
 .clase{
@@ -53,9 +53,7 @@ h6{
     width:30px;
 }
 
-.botonAzul{
-    max-width:70px !important;
-}
+
 
 @media screen and (max-width: 600px) {
     .Pizzeria{

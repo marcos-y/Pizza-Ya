@@ -64,8 +64,8 @@ const Header = () => {
                                 <Nav.Link onClick={()=>handleShow("AdminApp")}>Admin</Nav.Link>
                         </Nav>
                         <div className="caja">
-                            <Button variant="light" className="boton3" onClick={()=>handleShow("Admin")}>Iniciar sesion</Button>
-                            <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
+                            <Button variant="light" className="boton5" onClick={()=>handleShow("Admin")}>Iniciar sesion</Button>
+                            <FormControl type="text" placeholder="Buscar pizzerias cercanas" className="mr-sm-2" />
                             <Button variant="outline-success">Buscar</Button>
                         </div>
                     </Navbar.Collapse>

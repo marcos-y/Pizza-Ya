@@ -24,7 +24,7 @@ import bebida2 from './components/corona.jpg';
 import bebida3 from './components/campari.jpg';
 import bebida4 from './components/fernet.jpg';
 import bebida5 from './components/gancia.jpg';
-import bebida6 from './components/coca.jpg';
+import bebida6 from './components/coca2.jpg';
 
 import postre1 from './components/flan.jpg';
 import postre2 from './components/lemon.jpg';
