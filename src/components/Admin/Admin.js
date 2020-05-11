@@ -27,29 +27,30 @@ const Admin = () => {
 
             </div>
 
+            
             <div className="menu">
                 <Link to="/MiTienda">
-                    <Button variant="info" size="lg">Mi tienda</Button>
+                    <Button variant="info" id="botonGrande" size="lg">Mi tienda</Button>
                 </Link>
                 <Link to="/MisProductos">
-                    <Button variant="success" size="lg">Mis productos</Button>
+                    <Button variant="success" id="botonGrande" size="lg">Mis productos</Button>
                 </Link>
                 
-            
-                <Navbar bg="light" variant="light" expand="lg">
+
+                <Navbar bg="light" variant="light" expand="lg" id="navb">
                     <Link to="/">
                         <Navbar.Brand ></Navbar.Brand>
                     </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link >Cerrar tienda</Nav.Link>
-                            <Nav.Link >Copiar mensajes para clientes</Nav.Link>
-                            <Link to="/Banners" className="nav-link">
-                            Mis banners
+                            <Button variant="light" id="navb">Cerrar tienda</Button>
+                            <Button variant="light" id="navb">Copiar mensajes para clientes</Button>
+                            <Link to="/Banners" >
+                            <Button variant="light" id="navb">Banners</Button>
                             </Link>
-                            <Link to="/MisPromos" className="nav-link">
-                                Mis promociones
+                            <Link to="/MisPromos" >
+                            <Button variant="light" id="navb">Mis promociones</Button>
                             </Link>
                         </Nav>
                         

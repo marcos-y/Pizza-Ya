@@ -100,7 +100,6 @@ const MisPromos = () => {
                     <h3>Promociones visibles</h3>
                 </div>
 
-
                 <div>
                     {
                         promosAdmin.map(product => { return <ProdAdmin key={product.id} nombre={product.nombre} clase={product.tipo} img={product.imagen} icon={product.icono}></ProdAdmin> }

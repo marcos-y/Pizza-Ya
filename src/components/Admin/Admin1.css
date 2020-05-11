@@ -9,12 +9,16 @@
     background-color: white;
 }
 
+#botonGrande{
+    height:200px;
+}
+
+
 .topright {
     position: absolute;
     top: 8px;
     right: 16px;
     font-size: 18px;
-    
   }
   
 
@@ -26,15 +30,11 @@
 }
 
 
-
 .buton1{
     margin-top:10px;
     float:right;
 }
 
-#botonGrande{
-    margin-bottom:20px;
-}
 
 .menu{
     display:flex;
@@ -43,8 +43,7 @@
     flex-wrap:wrap;
     margin:auto;
     justify-content: space-around;
-    background-color:wheat;
-    padding:30px;
+    background-color:white;
 }
 
 .submenu{
@@ -88,9 +87,4 @@
     margin-top:30px;
 }
 
-#navb{
-    background-color:wheat !important;
-    text-align:left;
-    border-color:wheat;
-}
 
