@@ -1,7 +1,6 @@
 import React from 'react';
 import fork from './fork.png';
 import './Pizzeria.css';
-import Button from 'react-bootstrap/Button';
 import {
     Link
   } from "react-router-dom";

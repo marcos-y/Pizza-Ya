@@ -8,6 +8,7 @@ import Pizzeria from './components/Pizzeria';
 import Footer from './components/Footer';
 import ListadoPizzerias from './components/ListadoPizzerias';
 
+
 import imagen1 from './components/pizza1.jpg';
 import imagen2 from './components/pizza2.jpg';
 import imagen3 from './components/pizza3.jpg';
@@ -48,7 +49,7 @@ import AdminApp from './components/AdminApp/AdminApp.js';
 import PedidoConfirmado from './components/PedidoConfirmado.js';
 import RetiroSucursal from './components/RetiroSucursal';
 import EnvioDom from './components/EnvioDom.js';
-
+import MisPromos from './components/Admin/MisPromos';
 
 function App() {
 
@@ -401,6 +402,11 @@ function App() {
             <Tienda></Tienda>
           </Route>
 
+          <Route path="/MisPromos">
+            <Admin></Admin>
+            <MisPromos></MisPromos>
+          </Route>
+
           <Route path="/AdminApp">
             <AdminApp></AdminApp>
           </Route>
@@ -418,9 +424,6 @@ function App() {
           </Route>
 
         </Switch>
-
-       
-
       </Router>
     </>
   );

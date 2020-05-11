@@ -1,0 +1,35 @@
+
+    .MisPromos{
+        margin:auto;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width:920px;
+        width:100%;
+        text-align:center;
+        background-color:white;
+    }
+
+    .hh{
+        margin-top:10px;
+        text-align:left;
+        color:black;
+    }
+
+    @media screen and (max-width: 600px) {
+        .btn-warning{
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+    
+        .btn-success{
+            margin-bottom:10px;
+            margin-top:10px;
+        }
+      }
+    
+      .botonverde2{
+          width:100% !important;
+          max-width:920px !important;
+          height:auto;
+      }

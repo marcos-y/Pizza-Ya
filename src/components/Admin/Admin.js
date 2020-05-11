@@ -45,8 +45,11 @@ const Admin = () => {
                         <Nav className="mr-auto">
                             <Nav.Link >Cerrar tienda</Nav.Link>
                             <Nav.Link >Copiar mensajes para clientes</Nav.Link>
-                            <Link to="/Banners">
-                            <Nav.Link >Mis banners</Nav.Link>
+                            <Link to="/Banners" className="nav-link">
+                            Mis banners
+                            </Link>
+                            <Link to="/MisPromos" className="nav-link">
+                                Mis promociones
                             </Link>
                         </Nav>
                         
