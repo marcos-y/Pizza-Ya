@@ -95,10 +95,11 @@ const MisPromos = () => {
         <>
             <div className="MisPromos">
                 <h3>Mis Promociones</h3>
-                <Button variant="success" className="botonverde2">Agregar nuevo producto</Button>
+                <Button variant="success" className="botonverde2" onClick={handleShow}>Agregar nuevo producto</Button>
                 <div className="hh">
                     <h3>Promociones visibles</h3>
                 </div>
+            </div>
 
                 <div>
                     {
@@ -201,9 +202,6 @@ const MisPromos = () => {
                     </Modal.Footer>
                 </Modal>
 
-
-
-            </div>
 
         </>
     )

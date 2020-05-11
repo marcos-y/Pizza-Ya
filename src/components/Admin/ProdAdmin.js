@@ -58,8 +58,8 @@ const ProdAdmin = (props) => {
                 </div>
 
                 <div className="boton3">
-                    <Button variant="danger" size="sm">Ocultar</Button>
-                    <Button variant="info" size="sm" onClick={handleShow}>Editar</Button>
+                    <Button variant="danger" size="sm" id="botonChico">Ocultar</Button>
+                    <Button variant="info" size="sm" onClick={handleShow}  id="botonChico">Editar</Button>
                 </div>
 
             </div>
