@@ -144,7 +144,7 @@ function App() {
       product: "Cerveza Corona",
       stock: 25,
       img: bebida2
-      
+
     },
     {
       id: 3,
@@ -257,33 +257,33 @@ function App() {
 
   const listadoPizzerias = [
     {
-      id:1,
+      id: 1,
       nombre: "Pizza Hut",
       imagen: img1
     },
     {
-      id:2,
-      nombre:"La Continental",
+      id: 2,
+      nombre: "La Continental",
       imagen: img2
     },
     {
-      id:3,
-      nombre:"Domino's",
+      id: 3,
+      nombre: "Domino's",
       imagen: img3
     },
     {
-      id:4,
-      nombre:"Papa John",
+      id: 4,
+      nombre: "Papa John",
       imagen: img4
     },
     {
-      id:5,
-      nombre:"La tradicional",
+      id: 5,
+      nombre: "La tradicional",
       imagen: img5
     },
     {
-      id:6,
-      nombre:"La pizzada",
+      id: 6,
+      nombre: "La pizzada",
       imagen: img6
     }
   ]
@@ -309,47 +309,54 @@ function App() {
   };
 
   const handleQuantity = (product, type) => {
-    const updatedProduct = cart.filter(prod => prod.id === product.id);
-    const ArrayWithoutProduct = cart.filter(prod => prod.id !== product.id);
-
+    const updatedProduct = cart.find(prod => prod.id === product.id)
+    let updatedCart = cart;
     switch (type) {
       case "add":
-        if (updatedProduct[0].stock > updatedProduct[0].quantity) {
-          updatedProduct[0].quantity += 1;
+        if (updatedProduct.stock > updatedProduct.quantity) {
+          updatedCart = updatedCart.map(prod => {
+            if (prod.id === updatedProduct.id) {
+              prod.quantity += 1
+            };
+            return prod
+          });
         }
-
         break;
       case "remove":
-        if (updatedProduct[0].quantity >= 1) {
-          updatedProduct[0].quantity -= 1;
+        if (updatedProduct.quantity > 1) {
+          updatedCart = updatedCart.map(prod => {
+            if (prod.id === updatedProduct.id && prod.quantity > 1) {
+              prod.quantity -= 1;
+            };
+            return prod;
+          });
         }
         break;
       default:
         break;
     }
-    const newCart = [...ArrayWithoutProduct, updatedProduct[0]];
-    setCart(newCart);
-  }
-    
+    setCart(updatedCart);
+  };
+
 
   return (
     <>
       <Router>
 
-      
+
 
         <Switch>
 
           <Route exact path="/">
-            
+
             <Header listadoPizzerias={listadoPizzerias}></Header>
 
             <Carousel1></Carousel1>
-           
+
             <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
-            
+
             <Title nombre="Pizzerias"></Title>
-           
+
             <ListadoPizzerias pizzeria1={pizzeria1} listadoPizzerias={listadoPizzerias}></ListadoPizzerias>
 
             <Footer></Footer>
@@ -364,7 +371,7 @@ function App() {
           </Route>
 
           <Route path="/Pizzeria1/:nombre">
-          <Header></Header>
+            <Header></Header>
             <Productos nombre="Productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
@@ -391,7 +398,7 @@ function App() {
             <MisProductos></MisProductos>
           </Route>
 
-          
+
           <Route path="/Banners">
             <Admin></Admin>
             <Banners></Banners>
