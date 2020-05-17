@@ -10,7 +10,7 @@ import {
     Link,
 } from "react-router-dom";
 
-const Admin = () => {
+const Admin = (props) => {
 
     return (
         <>
@@ -23,6 +23,9 @@ const Admin = () => {
                     <Link to="/">
                     <Button variant="primary">Cerrar sesion</Button>
                     </Link>
+                    
+                    {/* ACA ENTRA EL NOMBRE DEL USER POR PROPS.USER*/}
+                    <h6>{props.user}</h6>
                 </div>
 
             </div>

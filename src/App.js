@@ -338,18 +338,21 @@ function App() {
     setCart(updatedCart);
   };
 
+  const [user,setUser] = useState("");
+
+  const submitUser = (name) =>{
+    setUser(name);
+  }
 
   return (
     <>
       <Router>
 
-
-
         <Switch>
 
           <Route exact path="/">
 
-            <Header listadoPizzerias={listadoPizzerias}></Header>
+            <Header listadoPizzerias={listadoPizzerias} submitUser={submitUser}></Header>
 
             <Carousel1></Carousel1>
 
@@ -389,28 +392,23 @@ function App() {
           </Route>
 
 
+          {/* ACA ENTRA EL NOMBRE DEL USUARIO POR PROPS*/}
           <Route path="/Admin">
-            <Admin></Admin>
+            <Admin user={user}></Admin>
           </Route>
 
           <Route path="/MisProductos">
-            <Admin></Admin>
-            <MisProductos></MisProductos>
-          </Route>
-
-
-          <Route path="/Banners">
-            <Admin></Admin>
-            <Banners></Banners>
+            <Admin user={user}></Admin>
+            <MisProductos ></MisProductos>
           </Route>
 
           <Route path="/MiTienda">
-            <Admin></Admin>
+            <Admin user={user}></Admin>
             <Tienda></Tienda>
           </Route>
 
           <Route path="/MisPromos">
-            <Admin></Admin>
+            <Admin user={user}></Admin>
             <MisPromos></MisPromos>
           </Route>
 

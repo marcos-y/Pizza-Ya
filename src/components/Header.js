@@ -22,6 +22,7 @@ const Header = (props) => {
     const [show, setShow] = useState(false);
     const [loginType, setloginType] = useState("");
     const handleClose = () => setShow(false);
+    
     const handleShow = (type) => {
         setloginType(type);
         setShow(true);
@@ -38,6 +39,7 @@ const Header = (props) => {
         setUsers([...users, usuario]);
         console.log(users);
         setShow(false);
+        props.submitUser(user);
     }
 
     const [show2, setShow2] = useState(false);
