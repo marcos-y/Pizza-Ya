@@ -10,23 +10,44 @@ import {
 
 const HeaderPedido = () => {
 
+    const props1 = {
+        nombre:"Ingresar",
+        olvideContra:"Olvide mi contraseña",
+        primVez:"Primera vez que ingreso",
+    }
+
+    const props2 = {
+        nombre:"Registrar",
+        olvideContra:"",
+        primVez:"",
+    }
+
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
+    const [loginType, setloginType] = useState("");
+    const [primeraVez, setPrimeraVez] = useState("");
+    const [olvideCont, setOlvideCont] = useState("");
+
+    const handleShow = (type) => {
+        setloginType(type.nombre);
+        setOlvideCont(type.olvideContra)
+        setPrimeraVez(type.primVez)
+        setShow(true);
+    }
+    
     return (
         <>
             <header>
                 <div className="botons">
-                    <Button variant="dark" onClick={handleShow}>Ingresar</Button>
-                    <Button variant="dark" onClick={handleShow}>Registrar</Button>
+                    <Button variant="dark"  onClick={() => handleShow(props1)}>Ingresar</Button>
+                    <Button variant="dark"  onClick={() => handleShow(props2)}>Registrar</Button>
                 </div>
             </header>
 
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Ingresar a mi cuenta</Modal.Title>
+                <Modal.Title>{loginType}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
@@ -43,14 +64,14 @@ const HeaderPedido = () => {
                             <Form.Control type="password" placeholder="Contraseña" />
                         </Form.Group>
                         <Link to="">
-                        <h6 className="contraseña">Olvide mi contraseña</h6>
+                        <h6 className="contraseña">{olvideCont}</h6>
                         <Button variant="danger" type="submit">
-                            Ingresar
+                            {loginType}
                         </Button>
                         </Link>
                     </Form>
                     <Link to="">
-                    <h7>Primera vez que ingreso</h7>
+                    <h7>{primeraVez}</h7>
                     </Link>
                 </Modal.Body>
         

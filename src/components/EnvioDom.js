@@ -13,8 +13,7 @@ const EnvioDom = () => {
     return (
         <>
             <HeaderPedido></HeaderPedido>
-                
-            <div>
+            
                 <div className="envio">
                     <h3>Entrega a domicilio</h3>
                     <Form>
@@ -34,11 +33,10 @@ const EnvioDom = () => {
                         </Form.Group>
                     </Form>
                     <Button variant="danger" size="lg">Enviar</Button>
-                    <Link to="">
+                    <Link to="/PedidoConfirmado">
                         <h5>Volver</h5>
                     </Link>
                 </div>
-            </div>
 
         </>
     )
