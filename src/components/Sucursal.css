@@ -1,4 +1,4 @@
-.Pizzeria{
+.sucursal{
     max-width:1300px;
     width:100%;
     height:auto;
@@ -8,12 +8,22 @@
     padding:30px;
     justify-content: space-around;
     align-items:center;
+    
 }
 
-.imglogo{
+.imglogo1{
     width:400px;
     display:flex;
     flex-wrap:nowrap;
+    border:solid;
+    border-color:black;
+    padding:10px;
+    border-radius:10px;
+    cursor: pointer;
+}
+
+.imglogo1:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logo{

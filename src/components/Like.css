@@ -1,0 +1,18 @@
+
+.like-0{
+    fill:gray;
+}
+
+.like-1{
+    fill:red;
+}
+
+.icon-cont{
+    cursor: pointer;
+}
+
+.icon-cont svg{
+    width:50px;
+    height: 50px;
+    
+}

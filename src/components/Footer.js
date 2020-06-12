@@ -7,6 +7,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import './Footer.css';
 
+import WhatsApp from './WhatsApp';
 
 const Footer = () => {
 
@@ -29,6 +30,7 @@ const Footer = () => {
         <>
 
             <div className="footer">
+
                 <div className="info2">
                     <h5>Telefono: +54 3416 324589</h5>
                     <h5>Email:PizzaYa@gmail.com</h5>
@@ -38,18 +40,22 @@ const Footer = () => {
 
                 <div className="forms">
 
-                    <h3 className="titulo">Dejanos un mensaje</h3>
-                    <label htmlFor="basic-url">Nombre</label>
-                    <InputGroup>
-                        <FormControl aria-describedby="basic-addon3" onChange={handleChangeNombre} value={nombre} />
-                    </InputGroup>
+                    <h3 className="titulo2">Dejanos un mensaje</h3>
 
+                    <div className="forms2">
 
-                    <label htmlFor="basic-url" className="titulo">En que podemos ayudarte?</label>
-                    <InputGroup >
-                        <FormControl aria-describedby="basic-addon3" onChange={handleChangeMensaje} value={mensaje} />
-                    </InputGroup>
+                        <div className="margin">
+                        <label htmlFor="basic-url">Nombre</label>
+                        <InputGroup>
+                            <FormControl aria-describedby="basic-addon3" onChange={handleChangeNombre} value={nombre} />
+                        </InputGroup>
+                        </div>
 
+                        <label htmlFor="basic-url" className="titulo">En que podemos ayudarte?</label>
+                        <InputGroup >
+                            <FormControl aria-describedby="basic-addon3" onChange={handleChangeMensaje} value={mensaje} />
+                        </InputGroup>
+                    </div>
 
                     <div className="mensaje">
                         <label htmlFor="basic-url">Email</label>
@@ -69,6 +75,7 @@ const Footer = () => {
                     <div className="comercios">
                         <h3 className="titulo">¿Queres adherir tu comercio?</h3>
                         <h5>Dejanos tu numero y nos contactaremos con vos</h5>
+                        <br></br>
                         <InputGroup >
                             <FormControl aria-describedby="basic-addon3" />
                         </InputGroup>
@@ -76,13 +83,13 @@ const Footer = () => {
                     <br></br>
                     <Button variant="light" onClick={handleSubmit} >Enviar</Button>
 
-
                     <div className="icons">
-                        <img src={icon1} alt="" className="icon"></img>
-                        <img src={icon2} alt="" className="icon"></img>
+                        <img src={icon1} alt="" className="icon"></img> 
                         <img src={icon3} alt="" className="icon"></img>
+                        <WhatsApp></WhatsApp>
                     </div>
                 </div>
+
             </div>
 
         </>

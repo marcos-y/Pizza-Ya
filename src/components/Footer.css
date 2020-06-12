@@ -1,40 +1,59 @@
 .footer{
     background-color: black;
-    padding:50px;
+    padding:20px;
     display:flex;
     flex-wrap:wrap;
     justify-content: space-around;
+    height:auto;
+    width:100%;
+    max-width:1000px;
+    margin:auto;
 }
 
 .info2{
     color:white;
     font-family: 'Roboto';
     padding:10px;
+    width:100%;
+    max-width:300px;
+    margin:auto;
 }
 
 .titulo{
+    text-align:left;
+    margin-bottom:3px;
+}
+
+.titulo2{
     text-align:left;
 }
 
 .forms{
     color:white;
     font-family:'Roboto';
-    min-width: 300px;
     padding:10px;
-    
+    width:100%;
+    max-width:300px;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.forms2{
+    margin-bottom:60px;
 }
 
 .mail{
     color:white;
     font-family: 'Roboto';
-    padding:10px;
-
+    width:100%;
+    max-width:300px;
+    margin:auto;
 }
 
 .icons{
     display:flex;
     flex-wrap:wrap;
-    margin-top:90px;
+    margin-top:40px;
 }
 
 .icon{
@@ -42,8 +61,6 @@
     height:auto;
     padding:10px;
 }
-
-
 
 .productos{
     margin:auto;
@@ -57,10 +74,14 @@
     padding:30px
 }
 
+.margin{
+    margin-bottom:4px;
+}
+
 .comercios{
     margin-top:0px;
 }
 
 .mensaje{
-    margin-top:55px;
+    margin-top:48px;
 }

@@ -8,7 +8,6 @@ import Pizzeria from './components/Pizzeria';
 import Footer from './components/Footer';
 import ListadoPizzerias from './components/ListadoPizzerias';
 
-
 import imagen1 from './components/pizza1.jpg';
 import imagen2 from './components/pizza2.jpg';
 import imagen3 from './components/pizza3.jpg';
@@ -38,6 +37,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useParams
 } from "react-router-dom";
 
 import Productos from './components/Productos';
@@ -50,6 +50,7 @@ import PedidoConfirmado from './components/PedidoConfirmado.js';
 import RetiroSucursal from './components/RetiroSucursal';
 import EnvioDom from './components/EnvioDom.js';
 import MisPromos from './components/Admin/MisPromos';
+import Pedidos from './components/Pedidos';
 
 function App() {
 
@@ -288,6 +289,7 @@ function App() {
     }
   ]
 
+  const [cantidad,setCantidad] = useState(1);
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = product => {
@@ -308,6 +310,8 @@ function App() {
     }
   };
 
+  const [cant,setCant] = useState(0);
+
   const handleQuantity = (product, type) => {
     const updatedProduct = cart.find(prod => prod.id === product.id)
     let updatedCart = cart;
@@ -317,6 +321,8 @@ function App() {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id) {
               prod.quantity += 1
+              setCant(prod.quantity);
+              console.log(cant);
             };
             return prod
           });
@@ -327,6 +333,8 @@ function App() {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id && prod.quantity > 1) {
               prod.quantity -= 1;
+              setCant(prod.quantity);
+              console.log(cant);
             };
             return prod;
           });
@@ -338,25 +346,36 @@ function App() {
     setCart(updatedCart);
   };
 
+  
   const [user,setUser] = useState("");
-
+  
   const submitUser = (name) =>{
     setUser(name);
   }
 
+
+  const [total,setTotal] = useState(0);
+  const addTotal = (tot) =>{
+    setTotal(tot);
+  }
+
+  
+
+
+
   return (
     <>
       <Router>
-
+          
         <Switch>
-
-          <Route exact path="/">
+         
+          <Route exact path="/"> 
 
             <Header listadoPizzerias={listadoPizzerias} submitUser={submitUser}></Header>
 
             <Carousel1></Carousel1>
 
-            <Promociones onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
+            <Promociones addTotal={addTotal} total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
 
             <Title nombre="Pizzerias"></Title>
 
@@ -365,10 +384,9 @@ function App() {
             <Footer></Footer>
 
           </Route>
-
-
+       
           <Route path="/Productos/:prods">
-            <Header></Header>
+            <Header ></Header>
             <Productos></Productos>
             <Footer></Footer>
           </Route>
@@ -391,8 +409,6 @@ function App() {
             <Footer></Footer>
           </Route>
 
-
-          {/* ACA ENTRA EL NOMBRE DEL USUARIO POR PROPS*/}
           <Route path="/Admin">
             <Admin user={user}></Admin>
           </Route>
@@ -412,6 +428,11 @@ function App() {
             <MisPromos></MisPromos>
           </Route>
 
+          <Route path="/Pedidos">
+            <Admin user={user}></Admin>
+            <Pedidos></Pedidos>
+          </Route>
+
           <Route path="/AdminApp">
             <AdminApp></AdminApp>
           </Route>
@@ -428,7 +449,10 @@ function App() {
             <EnvioDom></EnvioDom>
           </Route>
 
-        </Switch>
+       
+
+        </Switch> 
+
       </Router>
     </>
   );

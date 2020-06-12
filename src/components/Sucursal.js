@@ -6,9 +6,9 @@ const Sucursal = () => {
 
     return (
         <>
-            <div className="Pizzeria">
+            <div className="sucursal">
 
-                <div className="imglogo">
+                <div className="imglogo1">
                     <img src={logoContinental} alt="" className="logo"></img>
                     <div className="descripcion">
                         <div className="clase">

@@ -1,7 +1,14 @@
 import React from 'react';
 import FilaProductos from './FilaProductos';
 
+import {
+    useParams,
+  } from "react-router-dom";
+
 const Productos = (props) =>{
+
+    const {nombre} = useParams();
+    console.log(nombre);
 
     return(
         <>

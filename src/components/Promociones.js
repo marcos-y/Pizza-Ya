@@ -7,7 +7,7 @@ const Promociones = (props) => {
 
     return (
         <> 
-        <FilaProductos nombre="Promociones" onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} cart={props.cart} promos={props.promos}></FilaProductos>
+        <FilaProductos nombre="Promociones" addTotal={props.addTotal} total={props.total} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} cart={props.cart} promos={props.promos}></FilaProductos>
         </>
     )
 }

@@ -14,10 +14,8 @@
     top: 8px;
     right: 16px;
     font-size: 18px;
-    
   }
   
-
 .logoheader{
     margin:auto;
     max-width:500px;
@@ -25,20 +23,15 @@
     height:auto;
 }
 
-
-
 .buton1{
     margin-top:10px;
     float:right;
 }
 
-#botonGrande{
-    margin-bottom:20px;
-}
-
 .menu{
     display:flex;
     max-width:920px;
+    width:100%;
     height:auto;
     flex-wrap:wrap;
     margin:auto;
@@ -70,7 +63,11 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
+#botonGris{
+    margin-top:10px;
+    width:400px;
+    height:auto;
+}
 
 .h3{
     margin:auto;
@@ -92,8 +89,3 @@
     border-color:wheat;
 }
 
-#botonLargo{
-    min-width:830px;
-    width:100%;
-    height:auto;
-}

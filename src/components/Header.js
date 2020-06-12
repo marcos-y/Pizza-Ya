@@ -9,6 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Pizzeria from './Pizzeria';
+import Form from 'react-bootstrap/Form';
 
 import ico1 from './Login/user.png';
 import ico2 from './Login/pass.png';
@@ -49,6 +50,7 @@ const Header = (props) => {
     
     const handleChangeNombre = event =>setNombre(event.target.value);
 
+    {/* BUSCADOR DE PRODUCTOS Y PIZZERIAS */}
     const handleShow2 = (listado) =>{
         setShow2(true);
         console.log(nombre);
@@ -76,7 +78,6 @@ const Header = (props) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link>Productos</Nav.Link>
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
                                 <Link to="/Bebidas">
                                     <NavDropdown.Item href="#action/3.1">Bebidas</NavDropdown.Item>
@@ -85,13 +86,19 @@ const Header = (props) => {
                                     <NavDropdown.Item href="#action/3.2">Postres</NavDropdown.Item>
                                 </Link>
                             </NavDropdown>
+                         
+                            <Nav.Link href="#link" onClick={() => handleShow("Admin")}>Login</Nav.Link>
+                        
+                            {/*
                             <Nav.Link onClick={() => handleShow("AdminApp")}>Admin</Nav.Link>
+                            */}
                         </Nav>
+
                         <div className="caja">
-                            <Button variant="light" className="boton5" onClick={() => handleShow("Admin")}>Tienda</Button>
-                            <FormControl type="text" placeholder="Buscar pizzeria" className="mr-sm-2" onChange={handleChangeNombre} value={nombre}/>
+                            <FormControl type="text" placeholder="Buscar pizzeria o producto" className="mr-sm-2" onChange={handleChangeNombre} value={nombre}/>
                             <Button variant="outline-success" onClick={() => handleShow2(props.listadoPizzerias)}>Buscar</Button>
                         </div>
+
                     </Navbar.Collapse>
                 </Navbar>
 
@@ -121,13 +128,18 @@ const Header = (props) => {
                         <div className="form1">
                             <img src={ico2} alt="" width="40px" height="40px"></img>
                             <InputGroup className="mb-3">
+                                
+                                {/*
                                 <FormControl
                                     placeholder="Password"
                                     aria-label="Username"
                                     aria-describedby="basic-addon1"
                                     onChange={handleChangePassword}
                                     value={password}
-                                />
+                                    type={password}
+                                />*/}
+                                <Form.Control type="password" placeholder="Password"  onChange={handleChangePassword}
+                                    value={password} />
                             </InputGroup>
                         </div>
 

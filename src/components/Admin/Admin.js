@@ -34,16 +34,21 @@ const Admin = (props) => {
             <div className="menu">
                 
                 <Link to="/MisPromos">
-                    <Button variant="info" id="botonGrande" size="lg">Mis promociones</Button>
+                    <Button variant="info" size="lg">Mis promociones</Button>
                 </Link>
                 
                 <Link to="/MisProductos">
-                    <Button variant="success" id="botonGrande" size="lg">Mis productos</Button>
+                    <Button variant="success" size="lg">Mis productos</Button>
                 </Link>
 
                 <Link to="/MiTienda">
-                    <Button variant="dark" size="lg">Mi Tienda</Button>
+                    <Button variant="dark" size="lg" id="botonGris">Mi Tienda</Button>
                 </Link>
+
+                <Link to="/Pedidos">
+                    <Button variant="dark"  size="lg" id="botonGris">Pedidos</Button>
+                </Link>
+            
             </div>
 
         </>

@@ -3,6 +3,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import './ProductoEnModal.css';
+import icon3 from './bin.svg';
 
 const ProductoModal = (props) => {
 
@@ -37,8 +38,9 @@ const ProductoModal = (props) => {
                                                 </InputGroup.Prepend>
                                             </InputGroup>
                                         </div>
-
                                     </div>
+
+                                    <img src={icon3} width="50" height="50" className="icon3"></img>
                                 </div>
                                
 
