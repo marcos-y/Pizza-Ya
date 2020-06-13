@@ -51,6 +51,7 @@ import RetiroSucursal from './components/RetiroSucursal';
 import EnvioDom from './components/EnvioDom.js';
 import MisPromos from './components/Admin/MisPromos';
 import Pedidos from './components/Pedidos';
+import Verpedido from './components/Verpedido';
 
 function App() {
 
@@ -359,9 +360,6 @@ function App() {
     setTotal(tot);
   }
 
-  
-
-
 
   return (
     <>
@@ -370,6 +368,8 @@ function App() {
         <Switch>
          
           <Route exact path="/"> 
+
+            <Verpedido cart={cart} total={total}></Verpedido>
 
             <Header listadoPizzerias={listadoPizzerias} submitUser={submitUser}></Header>
 
@@ -386,24 +386,28 @@ function App() {
           </Route>
        
           <Route path="/Productos/:prods">
+            <Verpedido  cart={cart} total={total}></Verpedido>
             <Header ></Header>
             <Productos></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Pizzeria1/:nombre">
+            <Verpedido></Verpedido>
             <Header></Header>
             <Productos nombre="Productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
+            <Verpedido></Verpedido>
             <Header></Header>
             <Productos nombre="Bebidas" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
+            <Verpedido></Verpedido>
             <Header></Header>
             <Productos nombre="Postres" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
