@@ -14,6 +14,9 @@ const ProductoModal = (props) => {
                 {props.cart && props.cart.length > 0 ? (
                     <ul>
                         {props.cart.map(product => {
+
+                            if(product.quantity !=0)
+                            {
                             return (
 
                                 <div className="ProductoModal">
@@ -39,12 +42,14 @@ const ProductoModal = (props) => {
                                             </InputGroup>
                                         </div>
                                     </div>
-
-                                    <img src={icon3} width="50" height="50" className="icon3"></img>
+                                    
+                                    <div onClick={() => props.onAddQuant(product,"removeProd")}>
+                                        <img src={icon3} width="50" height="50" className="icon3"></img>
+                                    </div>
                                 </div>
                                
-
                             );
+                            }
                         })}
                     </ul>
                 ) : (

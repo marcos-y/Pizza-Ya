@@ -313,6 +313,13 @@ function App() {
 
   const [cant,setCant] = useState(0);
 
+  
+  const [total,setTotal] = useState(0);
+  const addTotal = (tot) =>{
+    setTotal(tot);
+  }
+
+
   const handleQuantity = (product, type) => {
     const updatedProduct = cart.find(prod => prod.id === product.id)
     let updatedCart = cart;
@@ -341,6 +348,21 @@ function App() {
           });
         }
         break;
+
+        case "removeProd":
+          if (updatedProduct.quantity >= 1) {
+            updatedCart = updatedCart.map(prod => {
+              if (prod.id === updatedProduct.id && prod.quantity >= 1) {
+                let quant2 = prod.quantity;
+                prod.quantity = 0;
+                setCant(prod.quantity);
+                console.log(prod);
+                setTotal(total-(prod.stock*quant2));
+              };
+              return prod;
+            });
+          }
+          break;
       default:
         break;
     }
@@ -355,10 +377,6 @@ function App() {
   }
 
 
-  const [total,setTotal] = useState(0);
-  const addTotal = (tot) =>{
-    setTotal(tot);
-  }
 
 
   return (
@@ -369,13 +387,13 @@ function App() {
          
           <Route exact path="/"> 
 
-            <Verpedido cart={cart} total={total}></Verpedido>
+            <Verpedido cart={cart} total={total} onAddQuant={handleQuantity}></Verpedido>
 
             <Header listadoPizzerias={listadoPizzerias} submitUser={submitUser}></Header>
 
             <Carousel1></Carousel1>
 
-            <Promociones addTotal={addTotal} total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
+            <Promociones addTotal={addTotal}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
 
             <Title nombre="Pizzerias"></Title>
 

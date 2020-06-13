@@ -17,10 +17,7 @@ const Verpedido = (props) => {
 
     const handleShow = () => {
         setShow(true);
-       
      }
-
-     console.log(props.cart);
 
     return (
         <>
@@ -36,7 +33,7 @@ const Verpedido = (props) => {
                 <Modal.Body>
 
                     {/*---------------------------CART----------------------------nombre={props.nombre}*/}
-                    <ProductoEnModal  cart={props.cart}></ProductoEnModal>
+                    <ProductoEnModal onAddQuant={props.onAddQuant}  cart={props.cart}></ProductoEnModal>
                     <h6>Total:${props.total}</h6>
                 </Modal.Body>
 
