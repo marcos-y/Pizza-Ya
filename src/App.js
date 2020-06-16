@@ -365,6 +365,22 @@ function App() {
             });
           }
           break;
+
+          /*
+          case "removeProds":
+          if (updatedProduct.quantity >= 1) {
+            updatedCart = updatedCart.map(prod => {
+              if (prod.id === updatedProduct.id && prod.quantity >= 1) {
+                prod.quantity = 0;
+                setCant(prod.quantity);
+                console.log(prod);
+                /*setTotal(total-(prod.stock*quant2));
+              };
+              return prod;
+            });
+          }
+          break; */
+
       default:
         break;
     }

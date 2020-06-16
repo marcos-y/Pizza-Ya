@@ -3,6 +3,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import './Pedidos.css';
 import FormCheck from 'react-bootstrap/FormCheck';
 import Form from 'react-bootstrap/Form';
+import Table from 'react-bootstrap/Table';
+import './Admin/Tabla.css';
 
 const Pedidos = () => {
 
@@ -111,49 +113,44 @@ const Pedidos = () => {
         }
     ]
 
-    const [estadoPedido, setEstadoPedido] = useState("");
-
-    const handleEstado = (nro) => {
-        const buscaPedidos = pedidos.find(pedido1 => pedido1.nropedido === nro);
-        console.log(buscaPedidos);
-        if (buscaPedidos.nropedido === nro) {
-            if (buscaPedidos.estado1 === "c") {
-
-                pedidos[nro].estado1 = "p";
-                console.log(1);
-                console.log(pedidos[nro].estado1);
-            }
-            else if (buscaPedidos.estado1 === "p") {
-                console.log(2);
-                pedidos[nro].estado1 = "c";
-                console.log(pedidos[nro].estado1);
-            }
-        }
-        window.location.reload(false);
-    }
-
-
     return (
         <>
-            <div className="Lista">
-                <ListGroup.Item className="item" action variant="primary">Min:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estado: &nbsp;&nbsp;&nbsp; Entrega &nbsp;&nbsp;&nbsp; Total&nbsp;&nbsp;&nbsp; Paga&nbsp;&nbsp;&nbsp; Telefono &nbsp;&nbsp;&nbsp;Numero &nbsp; Pedido &nbsp;&nbsp;&nbsp;  Chofer &nbsp;&nbsp;&nbsp;  Direccion&nbsp;&nbsp;&nbsp; Confirm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ListGroup.Item>
-                {
-                    pedidos.map(pedido => {
-                        if (pedido.estado1 === "c") {
-                            return <ListGroup.Item className="item" key={pedido.nropedido} action variant="primary"><p>{pedido.min} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedido.estado1}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedido.entrega} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedido.total} &nbsp;&nbsp;&nbsp;{pedido.paga} &nbsp;&nbsp;&nbsp;{pedido.telefono} &nbsp;&nbsp;&nbsp; {pedido.nropedido}&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{pedido.chofer} &nbsp;&nbsp;&nbsp;{pedido.direccion} &nbsp;&nbsp;&nbsp; 
-                             </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <Form.Group controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="" />
-                            </Form.Group> <span className="badge badge-primary badge-pill" onClick={() => handleEstado(pedido.nropedido)}>Marcar como pendiente</span></ListGroup.Item>
-                        }
-                        else if (pedido.estado1 === "p") {
-                            return <ListGroup.Item className="item" key={pedido.nropedido} action variant="danger"><p>{pedido.min} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedido.estado1} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedido.entrega}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {pedido.total}&nbsp;&nbsp;&nbsp; {pedido.paga}&nbsp; &nbsp;&nbsp;{pedido.telefono} &nbsp;&nbsp;&nbsp; {pedido.nropedido} &nbsp;&nbsp;&nbsp;{pedido.chofer} &nbsp;&nbsp;&nbsp;{pedido.direccion}</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                           <Form.Group controlId="formBasicCheckbox">
-                                    <Form.Check type="checkbox" label="" />
-                                </Form.Group><span className="badge badge-primary badge-pill" onClick={() => handleEstado(pedido.nropedido)}>Marcar como hecho</span></ListGroup.Item>
-                        }
-                    })
-                }
-            </div>
+             <Table className="tabla" responsive>
+                <thead>
+                    <tr>
+                        <th>Min</th>
+                        <th>estado1</th>
+                        <th>entrega</th>
+                        <th>Total</th>
+                        <th>Paga</th>
+                        <th>Telefono</th>
+                        <th>Pedido</th>
+                        <th>Chofer</th>
+                        <th>Direccion</th>
+                        <th>Llamar</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    { pedidos.map( pedido => { return(
+                    <tr>
+                        <td>{pedido.min}</td>
+                        <td>{pedido.estado1}</td>
+                        <td>{pedido.entrega}</td>
+                        <td>{pedido.total}</td>
+                        <td>{pedido.paga}</td>
+                        <td>{pedido.telefono}</td>
+                        <td>{pedido.nropedido}</td>
+                        <td>{pedido.chofer}</td>
+                        <td>{pedido.direccion}</td>
+                        <td>{pedido.llamar}</td>
+                        <td>{pedido.estado}</td>
+                    </tr>
+                    )})
+                    }
+                </tbody>
+            </Table>
+
         </>
     )
 }
