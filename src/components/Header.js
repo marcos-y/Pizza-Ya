@@ -29,12 +29,14 @@ const Header = (props) => {
         setShow(true);
     }
 
+
     const [password, setPassword] = useState("");
     const [user, setUser] = useState("");
     const [users, setUsers] = useState([]);
     const handleChangePassword = event => setPassword(event.target.value);
     const handleChangeUser = event => setUser(event.target.value);
 
+    
     const handleSubmit = () => {
         const usuario = { user, password };
         setUsers([...users, usuario]);

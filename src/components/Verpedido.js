@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import icon from './lista.svg';
+import icon from './cesta.svg';
 import './Verpedido.css';
 import './ProductoEnModal';
 import Modal from 'react-bootstrap/Modal';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react' 
+import React, { useState } from 'react'
 import './Tienda.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,27 +9,27 @@ import logo from '../logoContinental1.jpg';
 
 const Tienda = () => {
 
-    const [tiendas,setTiendas] = useState([]);
+    const [tiendas, setTiendas] = useState([]);
 
-    const [nombre,setNombre] = useState("");
-    const [telefono,setTelefono] = useState(0);
-    const [email,setEmail] = useState("");
-    const [direccion,setDireccion] = useState("");
-    const [horario,setHorario] = useState("");
-    const [categoria,setCategoria] = useState("");
-    const [descripcion,setDescripcion] = useState("");
+    const [nombre, setNombre] = useState("");
+    const [telefono, setTelefono] = useState(0);
+    const [email, setEmail] = useState("");
+    const [direccion, setDireccion] = useState("");
+    const [horario, setHorario] = useState("");
+    const [categoria, setCategoria] = useState("");
+    const [descripcion, setDescripcion] = useState("");
 
     const handleChangeNombre = event => setNombre(event.target.value);
     const handleChangeTelefono = event => setTelefono(event.target.value);
-    const handleChangeEmail = event =>setEmail(event.target.value);
+    const handleChangeEmail = event => setEmail(event.target.value);
     const handleChangeDireccion = event => setDireccion(event.target.value);
     const handleChangeHorario = event => setHorario(event.target.value);
     const handleChangeCategoria = event => setCategoria(event.target.categoria);
     const handleChangeDescripcion = event => setDescripcion(event.target.value);
-    
-    const handleSubmit = () =>{
-        const tienda = {nombre,telefono,email,direccion,horario,categoria,descripcion};
-        setTiendas([...tiendas,tienda]);
+
+    const handleSubmit = () => {
+        const tienda = { nombre, telefono, email, direccion, horario, categoria, descripcion };
+        setTiendas([...tiendas, tienda]);
         console.log(tiendas);
     }
 
@@ -41,7 +41,7 @@ const Tienda = () => {
                 <Form>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Nombre de la tienda</Form.Label>
-                        <Form.Control type="text" placeholder="Ej. La Continental" onChange={handleChangeNombre} value={nombre}/>
+                        <Form.Control type="text" placeholder="Ej. La Continental" onChange={handleChangeNombre} value={nombre} />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Telefono</Form.Label>
@@ -57,18 +57,18 @@ const Tienda = () => {
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
                         <Form.Label>Horarios de atencion</Form.Label>
-                        <Form.Control type="text" placeholder="ej. de 10:00  a 20:00 hs." onChange={handleChangeHorario} value={horario}/>
+                        <Form.Control type="text" placeholder="ej. de 10:00  a 20:00 hs." onChange={handleChangeHorario} value={horario} />
                     </Form.Group>
 
                     <label htmlFor="basic-url">Logo (Subir imagen)</label>
-                        <InputGroup className="mb-3">
-                            <InputGroup.Prepend>
-                                <Button variant="outline-secondary">Subir</Button>
-                                <Button variant="outline-secondary">Browse</Button>
-                            </InputGroup.Prepend>
-                            <FormControl aria-describedby="basic-addon1" />
-                        </InputGroup>
-            
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <Button variant="outline-secondary">Subir</Button>
+                            <Button variant="outline-secondary">Browse</Button>
+                        </InputGroup.Prepend>
+                        <FormControl aria-describedby="basic-addon1" />
+                    </InputGroup>
+
 
                     <Form.Group controlId="exampleForm.ControlSelect2">
                         <Form.Label>Categoria</Form.Label>
@@ -79,6 +79,11 @@ const Tienda = () => {
                             <option>Solo Bebidas</option>
                         </Form.Control>
                     </Form.Group>
+
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Con Delivery" />
+                    </Form.Group>
+
                     <Form.Group controlId="exampleForm.ControlTextarea1" onChange={handleChangeDescripcion} value={descripcion}>
                         <Form.Label>Descripciones extras</Form.Label>
                         <Form.Control as="textarea" rows="3" />

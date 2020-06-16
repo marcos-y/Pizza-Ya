@@ -300,26 +300,29 @@ function App() {
       if (updatedProduct[0].stock > updatedProduct[0].quantity) {
         const ArrayWithoutProduct = cart.filter(prod => prod.id !== product.id);
         updatedProduct[0].quantity += 1;
+        /*sacar o poner*/
+        setCant(updatedProduct[0].quantity);
         newCart = [...ArrayWithoutProduct, updatedProduct[0]];
         setCart(newCart);
       }
     } else {
       let productToAdd = product;
       productToAdd.quantity = 1;
+      /*sacar o poner*/
+      setCant(productToAdd.quantity);
       newCart = [...cart, productToAdd];
       setCart(newCart);
     }
   };
 
   const [cant,setCant] = useState(0);
-
-  
   const [total,setTotal] = useState(0);
+
   const addTotal = (tot) =>{
     setTotal(tot);
   }
 
-
+  /*Manejo la cantidad de productos*/
   const handleQuantity = (product, type) => {
     const updatedProduct = cart.find(prod => prod.id === product.id)
     let updatedCart = cart;
@@ -329,7 +332,7 @@ function App() {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id) {
               prod.quantity += 1
-              setCant(prod.quantity);
+              setCant(prod.quantity);       
               console.log(cant);
             };
             return prod
@@ -341,7 +344,7 @@ function App() {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id && prod.quantity > 1) {
               prod.quantity -= 1;
-              setCant(prod.quantity);
+              setCant(prod.quantity);            
               console.log(cant);
             };
             return prod;
@@ -353,11 +356,10 @@ function App() {
           if (updatedProduct.quantity >= 1) {
             updatedCart = updatedCart.map(prod => {
               if (prod.id === updatedProduct.id && prod.quantity >= 1) {
-                let quant2 = prod.quantity;
                 prod.quantity = 0;
                 setCant(prod.quantity);
                 console.log(prod);
-                setTotal(total-(prod.stock*quant2));
+                /*setTotal(total-(prod.stock*quant2));*/
               };
               return prod;
             });
@@ -377,8 +379,6 @@ function App() {
   }
 
 
-
-
   return (
     <>
       <Router>
@@ -393,7 +393,7 @@ function App() {
 
             <Carousel1></Carousel1>
 
-            <Promociones addTotal={addTotal}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
+            <Promociones cantidad={cant} addTotal={addTotal}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
 
             <Title nombre="Pizzerias"></Title>
 
@@ -436,7 +436,7 @@ function App() {
           </Route>
 
           <Route path="/MisProductos">
-            <Admin user={user}></Admin>
+            <Admin /*user={user}*/></Admin>
             <MisProductos ></MisProductos>
           </Route>
 

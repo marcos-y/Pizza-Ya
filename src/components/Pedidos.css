@@ -1,6 +1,6 @@
-.ListGroup{
-    max-width:920px;
+.Lista{
     height:auto;
+    max-width:920px;
     width:100%;
     margin:auto;
     border:solid;
@@ -14,3 +14,7 @@
 }
 
 
+.item{
+    display:flex;
+    justify-content:center;
+}

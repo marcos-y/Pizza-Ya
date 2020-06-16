@@ -25,7 +25,7 @@ const Admin = (props) => {
                     </Link>
                     
                     {/* ACA ENTRA EL NOMBRE DEL USER POR PROPS.USER*/}
-                    <h6>{props.user}</h6>
+                   <h6>{props.user}</h6>
                 </div>
 
             </div>

@@ -18,7 +18,8 @@ const Producto = (props) => {
     const handleShow = () => {
         setShow(true);
         props.onAddToCart(JSON.parse(props.product));
-        props.addTotal(JSON.parse(props.total)+JSON.parse(props.stock));
+        /*Stock es precio en realidad*/
+        props.addTotal(JSON.parse(props.total*props.cantidad)+JSON.parse(props.stock));
     }
 
     return (
@@ -47,7 +48,8 @@ const Producto = (props) => {
 
                     {/*---------------------------CART----------------------------*/}
                     <ProductoEnModal nombre={props.nombre} onAddQuant={props.onAddQuant} cart={props.cart} ></ProductoEnModal>
-                <h6>Total:${props.total}</h6>
+                {/*Aca se deberia multiplicar por cant*/}
+                <h6>Total:${(props.total)*(props.cantidad)}</h6>
                 </Modal.Body>
 
                 <Modal.Footer>
