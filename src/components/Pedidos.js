@@ -129,6 +129,7 @@ const Pedidos = () => {
                         <th>Direccion</th>
                         <th>Llamar</th>
                         <th>Estado</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -145,6 +146,9 @@ const Pedidos = () => {
                         <td>{pedido.direccion}</td>
                         <td>{pedido.llamar}</td>
                         <td>{pedido.estado}</td>
+                        <td><Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="" />
+                        </Form.Group></td>
                     </tr>
                     )})
                     }

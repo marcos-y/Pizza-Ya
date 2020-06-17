@@ -290,61 +290,82 @@ function App() {
     }
   ]
 
-  const [cantidad,setCantidad] = useState(1);
+  /*const [cantidad,setCantidad] = useState(1);*/
   const [cart, setCart] = useState([]);
+  const [cant,setCant] = useState(0);
+  const [id,setId] = useState(0);
 
+    /*Añadir producto al carrito*/
   const handleAddToCart = product => {
     let newCart;
+    /*caso que ya este agregado*/
     if (cart.find(prod => prod.id === product.id)) {
       const updatedProduct = cart.filter(prod => prod.id === product.id);
       if (updatedProduct[0].stock > updatedProduct[0].quantity) {
         const ArrayWithoutProduct = cart.filter(prod => prod.id !== product.id);
         updatedProduct[0].quantity += 1;
-        /*sacar o poner*/
-        setCant(updatedProduct[0].quantity);
         newCart = [...ArrayWithoutProduct, updatedProduct[0]];
         setCart(newCart);
-      }
+        setTotal(total+updatedProduct[0].stock);
+      } /*caso que no este en el carrito*/
     } else {
       let productToAdd = product;
       productToAdd.quantity = 1;
-      /*sacar o poner*/
-      setCant(productToAdd.quantity);
+      /*sumo el producto al total (producto que no esta en cart)*/
+      setTotal(productToAdd.stock);
+      
+      if(cant==0)
+      {
+        setCant(1);
+        setTotal(productToAdd.stock);
+        setId(productToAdd.id)
+      }
+      else
+      {
+        setCant(cant+1);
+        setTotal(total+productToAdd.stock);
+        setId(productToAdd.id)
+      }
       newCart = [...cart, productToAdd];
       setCart(newCart);
     }
   };
 
-  const [cant,setCant] = useState(0);
   const [total,setTotal] = useState(0);
-
-  const addTotal = (tot) =>{
-    setTotal(tot);
-  }
 
   /*Manejo la cantidad de productos*/
   const handleQuantity = (product, type) => {
     const updatedProduct = cart.find(prod => prod.id === product.id)
     let updatedCart = cart;
     switch (type) {
+      /*AGREGAR*/
       case "add":
         if (updatedProduct.stock > updatedProduct.quantity) {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id) {
-              prod.quantity += 1
-              setCant(prod.quantity);       
-              console.log(cant);
+              prod.quantity += 1;  
+                const cant1 = cant+1;
+                setCant(cant1); 
+                console.log(cant1);
+                setTotal(cant1*prod.stock);
             };
             return prod
           });
         }
         break;
+        /*REMOVER*/
       case "remove":
         if (updatedProduct.quantity > 1) {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id && prod.quantity > 1) {
               prod.quantity -= 1;
-              setCant(prod.quantity);            
+              if (cant>1)
+              {      
+                const cant2 = cant-1;
+                setCant(cant2);
+                const totresta = (cant2*prod.stock);
+                setTotal(totresta);
+              }         
               console.log(cant);
             };
             return prod;
@@ -352,14 +373,20 @@ function App() {
         }
         break;
 
+        /*REMOVER TODOS LOS DE UN TIPO*/
         case "removeProd":
           if (updatedProduct.quantity >= 1) {
             updatedCart = updatedCart.map(prod => {
               if (prod.id === updatedProduct.id && prod.quantity >= 1) {
+                const cant1 = prod.quantity;
+                const precio = prod.stock;
+                const borrar = (cant1*precio);
+                /*
+                console.log("cantidad1",cant1);
+                console.log("precio",precio);
+                console.log("total borrar:", cant1*precio);*/
                 prod.quantity = 0;
-                setCant(prod.quantity);
-                console.log(prod);
-                /*setTotal(total-(prod.stock*quant2));*/
+                setTotal(total-(borrar));      
               };
               return prod;
             });
@@ -409,7 +436,7 @@ function App() {
 
             <Carousel1></Carousel1>
 
-            <Promociones cantidad={cant} addTotal={addTotal}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
+            <Promociones cantidad={cant} /*addTotal={addTotal}*/  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} promos={promos} cart={cart}></Promociones>
 
             <Title nombre="Pizzerias"></Title>
 
