@@ -52,6 +52,7 @@ import EnvioDom from './components/EnvioDom.js';
 import MisPromos from './components/Admin/MisPromos';
 import Pedidos from './components/Pedidos';
 import Verpedido from './components/Verpedido';
+import Pedidos2 from './components/Pedidos2';
 
 function App() {
 
@@ -492,9 +493,15 @@ function App() {
             <MisPromos></MisPromos>
           </Route>
 
+          {/*ACA ESTA VER DETALLE*/}
           <Route path="/Pedidos">
             <Admin user={user}></Admin>
             <Pedidos></Pedidos>
+          </Route>
+
+          <Route path="/Pedidos2">
+            <Admin user={user}></Admin>
+            <Pedidos2></Pedidos2>
           </Route>
 
           <Route path="/AdminApp">

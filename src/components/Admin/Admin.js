@@ -45,7 +45,7 @@ const Admin = (props) => {
                     <Button variant="dark" size="lg" id="botonGris">Mi Tienda</Button>
                 </Link>
 
-                <Link to="/Pedidos">
+                <Link to="/Pedidos2">
                     <Button variant="dark"  size="lg" id="botonGris">Pedidos</Button>
                 </Link>
             

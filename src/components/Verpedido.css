@@ -1,11 +1,12 @@
 .Verpedido{
     position:fixed;
     top: 0;
-    margin-left:20px;
+    margin-left:15px;
     margin-top:5px;
     cursor: pointer;
     padding:10px;
     background-color:none;
+    z-index:1000;
 }
 
 #letras{
