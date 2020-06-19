@@ -23,7 +23,7 @@ const Verpedido = (props) => {
         <>
             <div className="Verpedido" onClick={handleShow}>
                 <img src={icon} width="50" height="50"></img>
-                <h6>Ver mi pedido</h6>
+                <h5>Ver mi pedido</h5>
             </div>
 
             <Modal show={show} onHide={handleClose}>

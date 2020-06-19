@@ -136,41 +136,41 @@ function App() {
 
   const bebidas = [
     {
-      id: 1,
+      id: 10,
       product: "Cerveza Stella Artois",
       stock: 25,
       img: bebida1
     },
     {
-      id: 2,
+      id: 11,
       product: "Cerveza Corona",
       stock: 25,
       img: bebida2
 
     },
     {
-      id: 3,
+      id: 12,
       product: "Campari",
       stock: 25,
       img: bebida3
 
     },
     {
-      id: 4,
+      id: 13,
       product: "Fernet",
       stock: 25,
       img: bebida4
 
     },
     {
-      id: 5,
+      id: 14,
       product: "Gancia",
       stock: 25,
       img: bebida5
 
     },
     {
-      id: 6,
+      id: 15,
       product: "Coca",
       stock: 25,
       img: bebida6
@@ -180,37 +180,37 @@ function App() {
 
   const postres = [
     {
-      id: 1,
+      id: 20,
       product: "Flan",
       stock: 25,
       img: postre1
     },
     {
-      id: 2,
+      id: 21,
       product: "Lemon Pie",
       stock: 25,
       img: postre2
     },
     {
-      id: 3,
+      id: 22,
       product: "Postre de cafe",
       stock: 25,
       img: postre3
     },
     {
-      id: 4,
+      id: 23,
       product: "Postre chocolate",
       stock: 25,
       img: postre4
     },
     {
-      id: 5,
+      id: 24,
       product: "Gelatina",
       stock: 25,
       img: postre5
     },
     {
-      id: 6,
+      id: 25,
       product: "Helado",
       stock: 25,
       img: postre6
@@ -220,37 +220,37 @@ function App() {
 
   const pizzeria1 = [
     {
-      id: 1,
+      id: 31,
       product: "Pizza napolitana",
       stock: 12,
       img: imagen1
     },
     {
-      id: 2,
+      id: 32,
       product: "Pizza a Taglio",
       stock: 30,
       img: imagen2
     },
     {
-      id: 3,
+      id: 33,
       product: "Pizza estilo New York",
       stock: 25,
       img: imagen3
     },
     {
-      id: 4,
+      id: 34,
       product: "Pizza Argentina",
       stock: 25,
       img: imagen1
     },
     {
-      id: 5,
+      id: 35,
       product: "Deep dish pizza o pizza estilo Chicago",
       stock: 25,
       img: imagen2
     },
     {
-      id: 6,
+      id: 36,
       product: "Sfincione",
       stock: 25,
       img: imagen3
@@ -307,27 +307,26 @@ function App() {
         newCart = [...ArrayWithoutProduct, updatedProduct[0]];
         setCart(newCart);
         setTotal(total+updatedProduct[0].stock);
-      } /*caso que no este en el carrito*/
-    } else {
+      } 
+      /*caso que no este en el carrito*/
+    }  else {
       let productToAdd = product;
+      console.log(productToAdd);
       productToAdd.quantity = 1;
+      newCart = [...cart, productToAdd];
+      setCart(newCart);
+  
       /*sumo el producto al total (producto que no esta en cart)*/
-      setTotal(productToAdd.stock);
-      
       if(cant==0)
       {
-        setCant(1);
+        setCant(cant+1);
         setTotal(productToAdd.stock);
-        setId(productToAdd.id)
       }
       else
       {
         setCant(cant+1);
         setTotal(total+productToAdd.stock);
-        setId(productToAdd.id)
       }
-      newCart = [...cart, productToAdd];
-      setCart(newCart);
     }
   };
 
@@ -343,11 +342,11 @@ function App() {
         if (updatedProduct.stock > updatedProduct.quantity) {
           updatedCart = updatedCart.map(prod => {
             if (prod.id === updatedProduct.id) {
-              prod.quantity += 1;  
-                const cant1 = cant+1;
+                prod.quantity += 1;  
+                const cant1 = prod.quantity;
+                setTotal(total+prod.stock);
                 setCant(cant1); 
                 console.log(cant1);
-                setTotal(cant1*prod.stock);
             };
             return prod
           });
@@ -363,7 +362,7 @@ function App() {
               {      
                 const cant2 = cant-1;
                 setCant(cant2);
-                const totresta = (cant2*prod.stock);
+                const totresta = (total-prod.stock);
                 setTotal(totresta);
               }         
               console.log(cant);
@@ -454,23 +453,23 @@ function App() {
           </Route>
 
           <Route path="/Pizzeria1/:nombre">
-            <Verpedido></Verpedido>
+            <Verpedido cart={cart} total={total}></Verpedido>
             <Header></Header>
-            <Productos nombre="Productos" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
+            <Productos nombre="Productos"  cantidad={cant}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
-            <Verpedido></Verpedido>
+            <Verpedido cart={cart} total={total}></Verpedido>
             <Header></Header>
-            <Productos nombre="Bebidas" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
+            <Productos nombre="Bebidas"  cantidad={cant}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
-            <Verpedido></Verpedido>
+            <Verpedido cart={cart} total={total}></Verpedido>
             <Header></Header>
-            <Productos nombre="Postres" onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
+            <Productos nombre="Postres" cantidad={cant}  total={total}  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 

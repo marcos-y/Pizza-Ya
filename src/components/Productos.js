@@ -12,7 +12,7 @@ const Productos = (props) =>{
 
     return(
         <>
-            <FilaProductos nombre={props.nombre} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} cart={props.cart} pizzeria1={props.pizzeria1} bebidas={props.bebidas} postres={props.postres}></FilaProductos>
+            <FilaProductos cantidad={props.cantidad} total={props.total} nombre={props.nombre} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} cart={props.cart} pizzeria1={props.pizzeria1} bebidas={props.bebidas} postres={props.postres}></FilaProductos>
         </>
     )
 }

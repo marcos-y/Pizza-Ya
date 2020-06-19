@@ -26,18 +26,18 @@ const FilaProductos = (props) => {
                     })
                     }
                     { 
-                    props.pizzeria1 && props.pizzeria1.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    props.pizzeria1 && props.pizzeria1.map(product=>{ return <Producto key={product.id}  cantidad={props.cantidad}  total={props.total} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
                     
                     })
                     }
                      { 
-                    props.bebidas && props.bebidas.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    props.bebidas && props.bebidas.map(product=>{ return <Producto key={product.id} cantidad={props.cantidad} total={props.total} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
                     
                     })
                     }
 
                     { 
-                    props.postres && props.postres.map(product=>{ return <Producto key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
+                    props.postres && props.postres.map(product=>{ return <Producto cantidad={props.cantidad} total={props.total} key={product.id} onAddToCart={props.onAddToCart} onAddQuant={props.onAddQuant} product={JSON.stringify(product)} stock={product.stock} nombre={product.product} cart={props.cart} img={product.img}></Producto>
                     
                     })
                     }
