@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logoAzul.png';
+import logoAzul from './logoAzul.png';
 import './Header.css';
 import Nav from 'react-bootstrap/Nav';
 import FormControl from 'react-bootstrap/FormControl';
@@ -15,8 +15,10 @@ import ico1 from './Login/user.png';
 import ico2 from './Login/pass.png';
 
 import {
-    Link
+    Link,
+    useParams
 } from "react-router-dom";
+
 
 const Header = (props) => {
 
@@ -28,7 +30,6 @@ const Header = (props) => {
         setloginType(type);
         setShow(true);
     }
-
 
     const [password, setPassword] = useState("");
     const [user, setUser] = useState("");
@@ -57,7 +58,7 @@ const Header = (props) => {
         setShow2(true);
         console.log(nombre);
         console.log(listado);
-        var busca = listado.find(pizzeria=>(pizzeria.nombre === nombre) || (pizzeria.nombre.toLowerCase())===nombre);
+        const busca = listado.find(pizzeria=>(pizzeria.nombre === nombre) || (pizzeria.nombre.toLowerCase())===nombre);
         if(busca === undefined)
         {
             console.log(busca);
@@ -69,10 +70,21 @@ const Header = (props) => {
         }
     } 
 
+    /*BUSCO LA IMAGEN EN EL ARRAY Y LA GUARDO EN UN OBJETO*/
+    const {nombrePizzeria} = useParams();
+    const busca2 = props.listadoPizzerias.find(pizzeria=>(pizzeria.nombre === nombrePizzeria));
+    if(busca2 == undefined)
+    {
+        var imagenFondo = './logoAzul.png';
+    }
+    else{
+         imagenFondo = busca2.imagen;
+    }
+   
     return (
         <>
             <div className="Header">
-                <img src={logo} alt="" className="logo1"></img>
+                <img src={imagenFondo} alt="" className="logo1"></img>
                 <Navbar bg="light" variant="light" expand="lg">
                     <Link to="/">
                         <Navbar.Brand>Home</Navbar.Brand>

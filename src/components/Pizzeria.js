@@ -32,8 +32,6 @@ const Pizzeria = (props) => {
                         Ver productos
                     </Link>
                 </div>
-    
-                
             </div>
 
 

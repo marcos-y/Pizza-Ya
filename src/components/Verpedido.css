@@ -5,8 +5,9 @@
     margin-top:5px;
     cursor: pointer;
     padding:10px;
-    background-color:none;
+    background-color:gainsboro;
     z-index:1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #letras{

@@ -12,10 +12,11 @@ import imagen1 from './components/pizza1.jpg';
 import imagen2 from './components/pizza2.jpg';
 import imagen3 from './components/pizza3.jpg';
 
-import img1 from './components/pizza_hut.jpg';
+/* FUENTE DE LAS IMAGENES LISTA PIZZERIAS*/
+import img1 from './components/fondohut.png';
 import img2 from './components/logoContinental1.jpg';
-import img3 from './components/dominos.png';
-import img4 from './components/pizzajhon.png';
+import img3 from './components/dominosFondo3.png';
+import img4 from './components/papaFondo.jpg';
 import img5 from './components/tradicional.jpg';
 import img6 from './components/pizzada.jpg';
 
@@ -37,7 +38,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
 } from "react-router-dom";
 
 import Productos from './components/Productos';
@@ -218,7 +218,6 @@ function App() {
     }
   ]
 
-
   const pizzeria1 = [
     {
       id: 31,
@@ -258,11 +257,12 @@ function App() {
     }
   ]
 
+   /*LISTADO DE PIZZERIAS*/
   const listadoPizzerias = [
     {
       id: 1,
       nombre: "Pizza Hut",
-      imagen: img1
+      imagen: img1,
     },
     {
       id: 2,
@@ -448,28 +448,29 @@ function App() {
        
           <Route path="/Productos/:prods">
             <Verpedido  cart={cart} total={total}></Verpedido>
-            <Header ></Header>
+            <Header></Header>
             <Productos></Productos>
             <Footer></Footer>
           </Route>
 
-          <Route path="/Pizzeria1/:nombre">
+          {/*CADA PIZZERIA DE LA LISTA*/}
+          <Route path="/Pizzeria1/:nombrePizzeria">
+            <Header listadoPizzerias={listadoPizzerias}></Header>
             <Verpedido cart={cart} total={total}></Verpedido>
-            <Header></Header>
             <Productos nombre="Productos"  cantidad={cant}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} pizzeria1={pizzeria1} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Bebidas">
             <Verpedido cart={cart} total={total}></Verpedido>
-            <Header></Header>
+            <Header  listadoPizzerias={listadoPizzerias}></Header>
             <Productos nombre="Bebidas"  cantidad={cant}  total={total} onAddToCart={handleAddToCart} onAddQuant={handleQuantity} bebidas={bebidas} cart={cart} ></Productos>
             <Footer></Footer>
           </Route>
 
           <Route path="/Postres">
             <Verpedido cart={cart} total={total}></Verpedido>
-            <Header></Header>
+            <Header  listadoPizzerias={listadoPizzerias}></Header>
             <Productos nombre="Postres" cantidad={cant}  total={total}  onAddToCart={handleAddToCart} onAddQuant={handleQuantity} postres={postres} cart={cart}></Productos>
             <Footer></Footer>
           </Route>
@@ -494,12 +495,12 @@ function App() {
           </Route>
 
           {/*ACA ESTA VER DETALLE*/}
-          <Route path="/Pedidos">
+          <Route path="/DetallePedidos">
             <Admin user={user}></Admin>
             <Pedidos></Pedidos>
           </Route>
 
-          <Route path="/Pedidos2">
+          <Route path="/Pedidos">
             <Admin user={user}></Admin>
             <Pedidos2></Pedidos2>
           </Route>

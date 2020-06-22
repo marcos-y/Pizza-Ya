@@ -57,22 +57,29 @@ const Pedidos2 = () => {
       const nro = pedido1.nropedido;
 
       /*CAMBIO EL ESTADO*/
-      if(pedidos[nro].estado === 'pendiente')
+      if((pedidos[nro].estado === 'pendiente') || (pedidos[nro].estado === 'cancelado'))
        {  
         const newArray = [...pedidos];
         const state = 'hecho';
         newArray[nro].estado=state;
         setPedidos(newArray);
 
-       } else 
-       {if(pedidos[nro].estado === 'hecho')
+       } else if((pedidos[nro].estado === 'hecho') || (pedidos[nro].estado === 'cancelado'))
        {
         const newArray = [...pedidos];
         const state = 'pendiente';
         newArray[nro].estado=state;
-        setPedidos(newArray);
+        setPedidos(newArray); 
        }
-        }
+    }
+
+    const handleEstado2 = (prop) =>{
+        const pedido1 = pedidos.find(pedido => (pedido.nropedido == prop));
+        const nro = pedido1.nropedido;
+        const newArray = [...pedidos];
+        const state = 'cancelado';
+        newArray[nro].estado=state;
+        setPedidos(newArray);
     }
 
     return (
@@ -95,10 +102,14 @@ const Pedidos2 = () => {
                         <td>{pedido.horaIngreso}</td>
                         <td>{pedido.descripcion}</td>
                         <td>{pedido.estado}</td>
-                        <td ><Link to="Pedidos">Ver detalle</Link></td>
+                        <td ><Link to="DetallePedidos">Ver detalle</Link></td>
                         <td><Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="" onClick={() => handleEstado(pedido.nropedido) }/>
-                        </Form.Group></td>
+                        <Form.Check type="checkbox" label={'cambiar estado'} onClick={() => handleEstado(pedido.nropedido) }/>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="cancelar" onClick={() => handleEstado2(pedido.nropedido) }/>
+                        </Form.Group>
+                        </td>
                     </tr>
                     )})
                     }
